@@ -12,9 +12,18 @@ namespace Student_Housing_BV
 {
     public partial class AdminView : Form
     {
-        public AdminView()
+        private User loggedInUser { get; set; }
+
+
+        public AdminView(User loggedInUser)
         {
             InitializeComponent();
+            this.loggedInUser = loggedInUser;
+        }
+
+        private void btnViewUsers_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
