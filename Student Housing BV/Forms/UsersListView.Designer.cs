@@ -30,7 +30,8 @@
         {
             btnAddUser = new Button();
             btnBackToAdminView = new Button();
-            lbDisplayAllUsers = new ListBox();
+            tbDisplayAllUsers = new ListBox();
+            btnRefreshPage = new Button();
             SuspendLayout();
             // 
             // btnAddUser
@@ -53,21 +54,32 @@
             btnBackToAdminView.UseVisualStyleBackColor = true;
             btnBackToAdminView.Click += btnBackToAdminView_Click;
             // 
-            // lbDisplayAllUsers
+            // tbDisplayAllUsers
             // 
-            lbDisplayAllUsers.FormattingEnabled = true;
-            lbDisplayAllUsers.ItemHeight = 32;
-            lbDisplayAllUsers.Location = new Point(190, 243);
-            lbDisplayAllUsers.Name = "lbDisplayAllUsers";
-            lbDisplayAllUsers.Size = new Size(946, 644);
-            lbDisplayAllUsers.TabIndex = 2;
+            tbDisplayAllUsers.FormattingEnabled = true;
+            tbDisplayAllUsers.ItemHeight = 32;
+            tbDisplayAllUsers.Location = new Point(190, 243);
+            tbDisplayAllUsers.Name = "tbDisplayAllUsers";
+            tbDisplayAllUsers.Size = new Size(946, 644);
+            tbDisplayAllUsers.TabIndex = 2;
+            // 
+            // btnRefreshPage
+            // 
+            btnRefreshPage.Location = new Point(572, 108);
+            btnRefreshPage.Name = "btnRefreshPage";
+            btnRefreshPage.Size = new Size(150, 78);
+            btnRefreshPage.TabIndex = 3;
+            btnRefreshPage.Text = "Refresh";
+            btnRefreshPage.UseVisualStyleBackColor = true;
+            btnRefreshPage.Click += btnRefreshPage_Click;
             // 
             // UsersListView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1351, 982);
-            Controls.Add(lbDisplayAllUsers);
+            Controls.Add(btnRefreshPage);
+            Controls.Add(tbDisplayAllUsers);
             Controls.Add(btnBackToAdminView);
             Controls.Add(btnAddUser);
             Name = "UsersListView";
@@ -79,6 +91,7 @@
 
         private Button btnAddUser;
         private Button btnBackToAdminView;
-        private ListBox lbDisplayAllUsers;
+        private ListBox tbDisplayAllUsers;
+        private Button btnRefreshPage;
     }
 }

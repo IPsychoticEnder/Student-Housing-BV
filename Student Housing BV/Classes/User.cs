@@ -20,5 +20,10 @@ namespace Student_Housing_BV.Classes
             this.password = password;
             this.isAdmin = isAdmin;
         }
+
+        public override string ToString()
+        {
+            return $"{this.userName} | {this.userID} | {this.isAdmin}";
+        }
     }
 }
