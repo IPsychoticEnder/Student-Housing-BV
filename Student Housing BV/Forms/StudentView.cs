@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Student_Housing_BV.Classes;
 
 namespace Student_Housing_BV
 {

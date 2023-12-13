@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Student_Housing_BV
+namespace Student_Housing_BV.Classes
 {
     internal class HandleUsers
     {
-        public List<User> users{ get; private set;}
-        
+        public List<User> users { get; private set; }
+
         public HandleUsers()
         {
             users = new List<User>();
@@ -20,15 +20,15 @@ namespace Student_Housing_BV
         public void AddUser(string userName, string password, bool isAdmin)
         {
             int userID = users.Last().userID + 1;
-            User newUser = new User(userName,userID, password, isAdmin);
+            User newUser = new User(userName, userID, password, isAdmin);
             users.Add(newUser);
         }
 
-        public void RemoveUser(string userName, int userID) 
+        public void RemoveUser(string userName, int userID)
         {
             foreach (User user in users)
             {
-                if(userName.Equals(user.userName) && userID == user.userID) 
+                if (userName.Equals(user.userName) && userID == user.userID)
                 {
                     users.Remove(user);
                 }
@@ -37,7 +37,7 @@ namespace Student_Housing_BV
 
         public User ValidateUser(User toBeValidatedUser)
         {
-            foreach(User user in users)
+            foreach (User user in users)
             {
                 if (toBeValidatedUser.userID == user.userID && toBeValidatedUser.password == user.password)
                 {
@@ -46,5 +46,7 @@ namespace Student_Housing_BV
             }
             return null;
         }
+
+        
     }
 }

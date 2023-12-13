@@ -1,3 +1,5 @@
+using Student_Housing_BV.Classes;
+
 namespace Student_Housing_BV
 {
     public partial class Login : Form
