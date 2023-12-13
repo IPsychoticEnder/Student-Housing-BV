@@ -2,11 +2,12 @@ using Student_Housing_BV.Classes;
 
 namespace Student_Housing_BV
 {
-    public partial class Login : Form
+    public partial class LoginView : Form
     {
         HandleUsers users = new HandleUsers();
+        HandleUsers handleUsers = new HandleUsers();
 
-        public Login()
+        public LoginView()
         {
             InitializeComponent();
         }
@@ -26,7 +27,7 @@ namespace Student_Housing_BV
                 {
                     if (validatedUser.isAdmin)
                     {
-                        AdminView adminView = new AdminView(validatedUser);
+                        AdminView adminView = new AdminView(handleUsers);
                         adminView.Show();
                         this.Hide();
                     }

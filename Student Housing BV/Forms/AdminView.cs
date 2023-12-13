@@ -14,19 +14,19 @@ namespace Student_Housing_BV
 {
     public partial class AdminView : Form
     {
-        private User loggedInUser { get; set; }
         private string username;
+        HandleUsers handleUsers;
 
 
-        public AdminView(User loggedInUser)
+        public AdminView(HandleUsers handleUsers)
         {
             InitializeComponent();
-            this.loggedInUser = loggedInUser;
+            this.handleUsers = handleUsers;
         }
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new UsersListView(loggedInUser);
+            UsersListView usersListView = new UsersListView(handleUsers);
             usersListView.Show();
             this.Close();
         }

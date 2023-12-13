@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Housing_BV.Classes
 {
-    internal class HandleUsers
+    public class HandleUsers
     {
         public List<User> users { get; private set; }
 
@@ -46,7 +46,5 @@ namespace Student_Housing_BV.Classes
             }
             return null;
         }
-
-        
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Student_Housing_BV
 {
-    partial class Login
+    partial class LoginView
     {
         /// <summary>
         ///  Required designer variable.
