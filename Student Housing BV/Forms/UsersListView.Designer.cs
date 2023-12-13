@@ -31,7 +31,6 @@
             btnAddUser = new Button();
             btnBackToAdminView = new Button();
             tbDisplayAllUsers = new ListBox();
-            btnRefreshPage = new Button();
             SuspendLayout();
             // 
             // btnAddUser
@@ -63,22 +62,12 @@
             tbDisplayAllUsers.Size = new Size(946, 644);
             tbDisplayAllUsers.TabIndex = 2;
             // 
-            // btnRefreshPage
-            // 
-            btnRefreshPage.Location = new Point(572, 108);
-            btnRefreshPage.Name = "btnRefreshPage";
-            btnRefreshPage.Size = new Size(150, 78);
-            btnRefreshPage.TabIndex = 3;
-            btnRefreshPage.Text = "Refresh";
-            btnRefreshPage.UseVisualStyleBackColor = true;
-            btnRefreshPage.Click += btnRefreshPage_Click;
-            // 
             // UsersListView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1351, 982);
-            Controls.Add(btnRefreshPage);
+            BackColor = Color.Gray;
+            ClientSize = new Size(1374, 929);
             Controls.Add(tbDisplayAllUsers);
             Controls.Add(btnBackToAdminView);
             Controls.Add(btnAddUser);
@@ -92,6 +81,5 @@
         private Button btnAddUser;
         private Button btnBackToAdminView;
         private ListBox tbDisplayAllUsers;
-        private Button btnRefreshPage;
     }
 }

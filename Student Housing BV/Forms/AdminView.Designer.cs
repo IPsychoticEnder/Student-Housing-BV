@@ -36,7 +36,7 @@
             // 
             // btnViewUsers
             // 
-            btnViewUsers.Location = new Point(172, 225);
+            btnViewUsers.Location = new Point(172, 182);
             btnViewUsers.Name = "btnViewUsers";
             btnViewUsers.Size = new Size(432, 243);
             btnViewUsers.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btnViewTasks
             // 
-            btnViewTasks.Location = new Point(807, 225);
+            btnViewTasks.Location = new Point(774, 182);
             btnViewTasks.Name = "btnViewTasks";
             btnViewTasks.Size = new Size(432, 243);
             btnViewTasks.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             // btnViewAgreements
             // 
-            btnViewAgreements.Location = new Point(172, 616);
+            btnViewAgreements.Location = new Point(172, 573);
             btnViewAgreements.Name = "btnViewAgreements";
             btnViewAgreements.Size = new Size(432, 243);
             btnViewAgreements.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(807, 616);
+            button4.Location = new Point(774, 573);
             button4.Name = "button4";
             button4.Size = new Size(432, 243);
             button4.TabIndex = 3;
@@ -75,7 +75,8 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1486, 960);
+            BackColor = Color.Gray;
+            ClientSize = new Size(1374, 929);
             Controls.Add(button4);
             Controls.Add(btnViewAgreements);
             Controls.Add(btnViewTasks);

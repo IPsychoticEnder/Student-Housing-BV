@@ -30,14 +30,5 @@ namespace Student_Housing_BV.Forms
             adminView.Show();
             this.Close();
         }
-
-        private void btnRefreshPage_Click(object sender, EventArgs e)
-        {
-            tbDisplayAllUsers.Items.Clear();
-            foreach (User user in handleUsers.users) 
-            {
-                tbDisplayAllUsers.Items.Add(user.ToString());
-            }
-        }
     }
 }

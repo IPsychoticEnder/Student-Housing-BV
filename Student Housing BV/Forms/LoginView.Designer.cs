@@ -45,14 +45,14 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnLogin);
-            groupBox1.Location = new Point(41, 47);
+            groupBox1.Location = new Point(396, 189);
             groupBox1.Margin = new Padding(4, 2, 4, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 2, 4, 2);
             groupBox1.Size = new Size(578, 570);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Login";
             // 
             // tbLoginUserID
             // 
@@ -103,15 +103,15 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
-            // Login
+            // LoginView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(693, 772);
+            ClientSize = new Size(1374, 929);
             Controls.Add(groupBox1);
-            Margin = new Padding(6, 6, 6, 6);
-            Name = "Login";
+            Margin = new Padding(6);
+            Name = "LoginView";
             Text = "Login";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
