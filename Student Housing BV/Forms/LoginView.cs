@@ -14,50 +14,30 @@ namespace Student_Housing_BV
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string stringUserID = tbLoginUserID.Text;
+            string userName = tbLoginUserID.Text;
             string password = tbLoginUserPassword.Text;
 
-            if (CanConvertToInt(stringUserID))
-            {
-                int userID = Convert.ToInt16(stringUserID);
-                User toBeValidatedUser = new User(null, userID, password, false);
-                User validatedUser = users.ValidateUser(toBeValidatedUser);
+            User toBeValidatedUser = new User(userName, -1, password, false);
+            User validatedUser = users.ValidateUser(toBeValidatedUser);
 
-                if (validatedUser != null)
+            if (validatedUser != null)
+            {
+                if (validatedUser.isAdmin)
                 {
-                    if (validatedUser.isAdmin)
-                    {
-                        AdminView adminView = new AdminView(handleUsers);
-                        adminView.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        StudentView studentView = new StudentView(validatedUser);
-                        studentView.Show();
-                        this.Hide();
-                    }
+                    AdminView adminView = new AdminView(handleUsers);
+                    adminView.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Please make sure your login information is correct");
+                    StudentView studentView = new StudentView(validatedUser);
+                    studentView.Show();
+                    this.Hide();
                 }
             }
             else
             {
-                MessageBox.Show("Please enter a valid User ID.");
-            }
-        }
-
-        public bool CanConvertToInt(string stringInteger)
-        {
-            if (int.TryParse(tbLoginUserID.Text, out int userID))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
+                MessageBox.Show("Please make sure your login information is correct");
             }
         }
     }

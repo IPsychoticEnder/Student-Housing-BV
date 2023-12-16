@@ -27,11 +27,14 @@ namespace Student_Housing_BV.Classes
             {
                 return $"00{this.userID} | {this.userName} | {this.isAdmin}";
             }
-            if (this.userID >= 10 && this.userID < 100) 
+            else if (this.userID < 100)
             {
                 return $"0{this.userID} | {this.userName} | {this.isAdmin}";
             }
-            return $"{this.userID} | {this.userName} | {this.isAdmin}";
+            else
+            {
+                return $"{this.userID} | {this.userName} | {this.isAdmin}";
+            }
         }
     }
 }

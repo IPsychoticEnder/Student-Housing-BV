@@ -61,7 +61,7 @@
             tbLoginUserID.Name = "tbLoginUserID";
             tbLoginUserID.Size = new Size(281, 39);
             tbLoginUserID.TabIndex = 5;
-            tbLoginUserID.Text = "000";
+            tbLoginUserID.Text = "admin";
             // 
             // tbLoginUserPassword
             // 
@@ -88,9 +88,9 @@
             label1.Location = new Point(33, 124);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(96, 32);
+            label1.Size = new Size(137, 32);
             label1.TabIndex = 1;
-            label1.Text = "User ID:";
+            label1.Text = "User Name:";
             // 
             // btnLogin
             // 
