@@ -23,7 +23,18 @@ namespace Student_Housing_BV.Classes
 
         public override string ToString()
         {
-            return $"{this.userID} | {this.userName} | {this.isAdmin}";
+            if (this.userID < 10)
+            {
+                return $"00{this.userID} | {this.userName} | {this.isAdmin}";
+            }
+            else if (this.userID < 100)
+            {
+                return $"0{this.userID} | {this.userName} | {this.isAdmin}";
+            }
+            else
+            {
+                return $"{this.userID} | {this.userName} | {this.isAdmin}";
+            }
         }
     }
 }
