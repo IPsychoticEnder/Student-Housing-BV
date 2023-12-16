@@ -24,7 +24,7 @@ namespace Student_Housing_BV
             {
                 if (validatedUser.isAdmin)
                 {
-                    AdminView adminView = new AdminView(handleUsers);
+                    AdminView adminView = new AdminView(handleUsers, validatedUser);
                     adminView.Show();
                     this.Hide();
                 }

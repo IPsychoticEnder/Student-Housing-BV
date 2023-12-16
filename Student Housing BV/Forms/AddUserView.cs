@@ -14,11 +14,13 @@ namespace Student_Housing_BV.Forms
     public partial class AddUserView : Form
     {
         HandleUsers handleUsers;
+        User loggedInUser;
 
-        public AddUserView(HandleUsers handleUsers)
+        public AddUserView(HandleUsers handleUsers, User loggedInUser)
         {
             InitializeComponent();
             this.handleUsers = handleUsers;
+            this.loggedInUser = loggedInUser;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace Student_Housing_BV.Forms
 
                 handleUsers.AddUser(userName, password, isAdmin);
 
-                UsersListView usersListView = new UsersListView(handleUsers);
+                UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
                 usersListView.Show();
                 this.Close();
             }

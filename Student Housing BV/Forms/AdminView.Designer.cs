@@ -32,6 +32,7 @@
             btnViewTasks = new Button();
             btnViewAgreements = new Button();
             button4 = new Button();
+            lbWelcomeUser = new Label();
             SuspendLayout();
             // 
             // btnViewUsers
@@ -71,12 +72,25 @@
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
             // 
+            // lbWelcomeUser
+            // 
+            lbWelcomeUser.Anchor = AnchorStyles.None;
+            lbWelcomeUser.AutoSize = true;
+            lbWelcomeUser.Font = new Font("Segoe UI", 19.875F, FontStyle.Regular, GraphicsUnit.Point);
+            lbWelcomeUser.ForeColor = Color.White;
+            lbWelcomeUser.Location = new Point(500, 60);
+            lbWelcomeUser.Name = "lbWelcomeUser";
+            lbWelcomeUser.Size = new Size(0, 71);
+            lbWelcomeUser.TabIndex = 4;
+            lbWelcomeUser.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // AdminView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(1374, 929);
+            Controls.Add(lbWelcomeUser);
             Controls.Add(button4);
             Controls.Add(btnViewAgreements);
             Controls.Add(btnViewTasks);
@@ -85,6 +99,7 @@
             Name = "AdminView";
             Text = "AdminView";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -93,5 +108,6 @@
         private Button btnViewTasks;
         private Button btnViewAgreements;
         private Button button4;
+        private Label lbWelcomeUser;
     }
 }

@@ -5,10 +5,14 @@ namespace Student_Housing_BV.Forms
     public partial class UsersListView : Form
     {
         HandleUsers handleUsers;
-        public UsersListView(HandleUsers handleUsers)
+        User loggedInUser;
+
+        public UsersListView(HandleUsers handleUsers, User loggedInUser)
         {
             InitializeComponent();
             this.handleUsers = handleUsers;
+            this.loggedInUser = loggedInUser;
+
             List<User> users = handleUsers.users;
             tbDisplayAllUsers.Items.Clear();
             foreach (User user in users)
@@ -19,14 +23,14 @@ namespace Student_Housing_BV.Forms
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            AddUserView addUserView = new AddUserView(handleUsers);
+            AddUserView addUserView = new AddUserView(handleUsers, loggedInUser);
             addUserView.Show();
             this.Close();
         }
 
         private void btnBackToAdminView_Click(object sender, EventArgs e)
         {
-            AdminView adminView = new AdminView(handleUsers);
+            AdminView adminView = new AdminView(handleUsers, loggedInUser);
             adminView.Show();
             this.Close();
         }
