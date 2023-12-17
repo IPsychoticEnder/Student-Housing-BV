@@ -1,5 +1,6 @@
 ﻿using Student_Housing_BV.Classes;
 using Student_Housing_BV.Forms.UsersView;
+using Student_Housing_BV.Forms.AdminView;
 
 namespace Student_Housing_BV.Forms
 {
@@ -24,14 +25,14 @@ namespace Student_Housing_BV.Forms
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            AddUserView addUserView = new AddUserView(handleUsers, loggedInUser);
+            AddUserView addUserView = new(handleUsers, loggedInUser);
             addUserView.Show();
             this.Hide();
         }
 
         private void btnBackToAdminView_Click(object sender, EventArgs e)
         {
-            AdminView adminView = new AdminView(handleUsers, loggedInUser);
+            AdminViewMainPage adminView = new(handleUsers, loggedInUser);
             adminView.Show();
             this.Close();
         }
@@ -40,7 +41,7 @@ namespace Student_Housing_BV.Forms
         {
             int userID = e.RowIndex;
 
-            EditUserView editUserView = new EditUserView(handleUsers, loggedInUser, userID);
+            EditUserView editUserView = new(handleUsers, loggedInUser, userID);
             editUserView.Show();
             this.Hide();
         }

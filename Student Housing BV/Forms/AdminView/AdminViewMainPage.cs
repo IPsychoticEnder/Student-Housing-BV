@@ -12,13 +12,13 @@ using Student_Housing_BV.Forms;
 
 namespace Student_Housing_BV
 {
-    public partial class AdminView : Form
+    public partial class AdminViewMainPage : Form
     {
         HandleUsers handleUsers;
         User loggedInUser;
 
 
-        public AdminView(HandleUsers users, User loggedInUser)
+        public AdminViewMainPage(HandleUsers users, User loggedInUser)
         {
             InitializeComponent();
             this.loggedInUser = loggedInUser;

@@ -1,6 +1,6 @@
 ﻿namespace Student_Housing_BV
 {
-    partial class AdminView
+    partial class AdminViewMainPage
     {
         /// <summary>
         /// Required designer variable.
