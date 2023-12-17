@@ -39,13 +39,30 @@ namespace Student_Housing_BV.Classes
             WriteToJson();
         }
 
-        public void RemoveUser(string userName, int userID)
+        public void RemoveUser(User toBeRemvedUser)
         {
+            if (users.Contains(toBeRemvedUser))
+            {
+                users.Remove(toBeRemvedUser);
+            }
+            int queueUserID = 0;
             foreach (User user in users)
             {
-                if (userName.Equals(user.userName) && userID == user.userID)
+                user.userID = queueUserID;
+                queueUserID++;
+            }
+            WriteToJson();
+        }
+
+        public void EditUser(User editedUser)
+        {
+            foreach(User user in users)
+            {
+                if (user.userID == editedUser.userID)
                 {
-                    users.Remove(user);
+                    user.userName =  editedUser.userName;
+                    user.password = editedUser.password;
+                    user.isAdmin = editedUser.isAdmin;
                 }
             }
             WriteToJson();

@@ -112,6 +112,7 @@
             Controls.Add(groupBox1);
             Margin = new Padding(6);
             Name = "LoginView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

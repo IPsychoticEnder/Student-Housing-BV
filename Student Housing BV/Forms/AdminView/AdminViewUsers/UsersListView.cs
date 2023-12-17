@@ -1,4 +1,5 @@
 ﻿using Student_Housing_BV.Classes;
+using Student_Housing_BV.Forms.UsersView;
 
 namespace Student_Housing_BV.Forms
 {
@@ -13,11 +14,11 @@ namespace Student_Housing_BV.Forms
             this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
 
+
             List<User> users = handleUsers.users;
-            tbDisplayAllUsers.Items.Clear();
             foreach (User user in users)
             {
-                tbDisplayAllUsers.Items.Add(user.ToString());
+                dtgridDisplayAllUsers.DataSource = users;
             }
         }
 
@@ -25,7 +26,7 @@ namespace Student_Housing_BV.Forms
         {
             AddUserView addUserView = new AddUserView(handleUsers, loggedInUser);
             addUserView.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnBackToAdminView_Click(object sender, EventArgs e)
@@ -33,6 +34,15 @@ namespace Student_Housing_BV.Forms
             AdminView adminView = new AdminView(handleUsers, loggedInUser);
             adminView.Show();
             this.Close();
+        }
+
+        private void dtgridDisplayAllUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int userID = e.RowIndex;
+
+            EditUserView editUserView = new EditUserView(handleUsers, loggedInUser, userID);
+            editUserView.Show();
+            this.Hide();
         }
     }
 }

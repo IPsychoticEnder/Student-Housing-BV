@@ -33,6 +33,7 @@
             btnViewAgreements = new Button();
             button4 = new Button();
             lbWelcomeUser = new Label();
+            btnLogOut = new Button();
             SuspendLayout();
             // 
             // btnViewUsers
@@ -84,12 +85,23 @@
             lbWelcomeUser.TabIndex = 4;
             lbWelcomeUser.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnLogOut
+            // 
+            btnLogOut.Location = new Point(25, 27);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(117, 54);
+            btnLogOut.TabIndex = 5;
+            btnLogOut.Text = "Logout";
+            btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
+            // 
             // AdminView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(1374, 929);
+            Controls.Add(btnLogOut);
             Controls.Add(lbWelcomeUser);
             Controls.Add(button4);
             Controls.Add(btnViewAgreements);
@@ -97,6 +109,7 @@
             Controls.Add(btnViewUsers);
             Margin = new Padding(6);
             Name = "AdminView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminView";
             ResumeLayout(false);
             PerformLayout();
@@ -109,5 +122,6 @@
         private Button btnViewAgreements;
         private Button button4;
         private Label lbWelcomeUser;
+        private Button btnLogOut;
     }
 }

@@ -37,6 +37,7 @@
             tbAddUserUserName = new TextBox();
             label4 = new Label();
             label2 = new Label();
+            btnBack = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.FromArgb(224, 224, 224);
+            groupBox1.Controls.Add(btnBack);
             groupBox1.Controls.Add(btnAddUser);
             groupBox1.Controls.Add(cbAddUserUserAdminAccess);
             groupBox1.Controls.Add(tbAddUserCheckUserPassword);
@@ -69,7 +71,7 @@
             // 
             // btnAddUser
             // 
-            btnAddUser.Location = new Point(353, 525);
+            btnAddUser.Location = new Point(593, 542);
             btnAddUser.Name = "btnAddUser";
             btnAddUser.Size = new Size(270, 62);
             btnAddUser.TabIndex = 8;
@@ -126,6 +128,16 @@
             label2.TabIndex = 1;
             label2.Text = "Password:";
             // 
+            // btnBack
+            // 
+            btnBack.Location = new Point(108, 542);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(270, 62);
+            btnBack.TabIndex = 9;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            // 
             // AddUserView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -134,6 +146,7 @@
             ClientSize = new Size(1374, 929);
             Controls.Add(groupBox1);
             Name = "AddUserView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddUserView";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -151,5 +164,6 @@
         private TextBox tbAddUserCheckUserPassword;
         private TextBox tbAddUserUserPassword;
         private Button btnAddUser;
+        private Button btnBack;
     }
 }
