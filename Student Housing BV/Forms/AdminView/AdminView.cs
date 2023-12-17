@@ -18,11 +18,11 @@ namespace Student_Housing_BV
         User loggedInUser;
 
 
-        public AdminView(HandleUsers handleUsers, User loggedInUser)
+        public AdminView(HandleUsers users, User loggedInUser)
         {
             InitializeComponent();
             this.loggedInUser = loggedInUser;
-            this.handleUsers = handleUsers;
+            this.handleUsers = users;
             lbWelcomeUser.Text = $"Welcome {this.loggedInUser.userName}";
         }
 
@@ -30,8 +30,14 @@ namespace Student_Housing_BV
         {
             UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
             usersListView.Show();
-            this.Close();
+            this.Hide();
         }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LoginView loginView = new LoginView();
+            loginView.Show();
+            this.Close();
+        }
     }
 }

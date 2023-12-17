@@ -34,19 +34,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(360, 231);
+            label1.Location = new Point(669, 493);
+            label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(117, 15);
+            label1.Size = new Size(241, 32);
             label1.TabIndex = 0;
             label1.Text = "This user is a Student";
             // 
             // StudentView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1486, 960);
             Controls.Add(label1);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "StudentView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "StudentView";
             ResumeLayout(false);
             PerformLayout();

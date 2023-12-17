@@ -42,5 +42,12 @@ namespace Student_Housing_BV.Forms
                 MessageBox.Show("Please enter a correct password");
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
+            usersListView.Show();
+            this.Close();
+        }
     }
 }
