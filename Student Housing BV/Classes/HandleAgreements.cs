@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Student_Housing_BV.Classes
 {
-    internal class HandleAgreements
+    public class HandleAgreements
     {
         public List<Agreement> Agreements { get; private set; }
         public string FilePath { get; private set; }
@@ -29,9 +30,18 @@ namespace Student_Housing_BV.Classes
 
         }
 
-        public void AddAgreement(Agreement newAgreement)
+        public void AddAgreement(string Title, string Description)
         {
+            int ID = 0;
+            if (Agreements.Count > 0)
+            {
+                ID = Agreements.Last().ID + 1;
+            }
 
+            Agreement newAgreement = new(Title, Description, ID);
+
+            Agreements.Add(newAgreement);
+            WriteToJson();
         }
 
         public void ReadFromJson()
@@ -42,6 +52,20 @@ namespace Student_Housing_BV.Classes
 
                 this.Agreements = JsonConvert.DeserializeObject<List<Agreement>>(jsonContent);
                 Console.WriteLine($"Succesfully read from: {FilePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error has occurd: {ex.Message}");
+            }
+        }
+
+        public void WriteToJson()
+        {
+            try
+            {
+                string jsonContent = JsonConvert.SerializeObject(Agreements, Formatting.Indented);
+                File.WriteAllText(FilePath, jsonContent);
+                Console.WriteLine($"Data succesfully written to: {FilePath}");
             }
             catch (Exception ex)
             {

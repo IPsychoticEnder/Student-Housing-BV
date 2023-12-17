@@ -18,20 +18,20 @@ namespace Student_Housing_BV.Forms
             List<User> users = handleUsers.Users;
             foreach (User user in users)
             {
-                dtgridDisplayAllUsers.DataSource = users;
+                dataGridDisplayAllUsers.DataSource = users;
             }
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            AddUserView addUserView = new AddUserView(handleUsers, loggedInUser);
+            AddUserView addUserView = new(handleUsers, loggedInUser);
             addUserView.Show();
             this.Hide();
         }
 
         private void btnBackToAdminView_Click(object sender, EventArgs e)
         {
-            AdminView adminView = new AdminView(handleUsers, loggedInUser);
+            AdminViewMainPage adminView = new(handleUsers, loggedInUser);
             adminView.Show();
             this.Close();
         }
@@ -40,7 +40,7 @@ namespace Student_Housing_BV.Forms
         {
             int userID = e.RowIndex;
 
-            EditUserView editUserView = new EditUserView(handleUsers, loggedInUser, userID);
+            EditUserView editUserView = new(handleUsers, loggedInUser, userID);
             editUserView.Show();
             this.Hide();
         }

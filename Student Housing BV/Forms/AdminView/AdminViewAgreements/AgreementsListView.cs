@@ -1,20 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+
+using Student_Housing_BV.Classes;
 
 namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 {
     public partial class AgreementsListView : Form
     {
-        public AgreementsListView()
+        HandleUsers handleUsers = new();
+        User loggedInUser;
+
+        HandleAgreements handleAgreements = new();
+        List<Agreement> agreements = new();
+
+
+        public AgreementsListView(HandleUsers handleUsers, User loggedInUser)
         {
             InitializeComponent();
+            this.handleUsers = handleUsers;
+            this.loggedInUser = loggedInUser;
+
+            agreements = handleAgreements.Agreements;
+
+            foreach (Agreement agreement in agreements)
+            {
+                dataGridDisplayAllAgreements.DataSource = agreement;
+            }
+        }
+
+        private void btnAddAgreement_Click(object sender, EventArgs e)
+        {
+            AddAgreementView addAgreementView = new(handleAgreements);
+            addAgreementView.Show();
+            this.Hide();
+        }
+
+        private void btnBackToAdminView_Click(object sender, EventArgs e)
+        {
+            AdminViewMainPage adminViewMainPage = new(handleUsers, loggedInUser);
+            adminViewMainPage.Show();
+            this.Close();
         }
     }
 }
