@@ -4,29 +4,5 @@
     "UserID": 0,
     "Password": "ADMIN",
     "IsAdmin": true
-  },
-  {
-    "UserName": "Ayayron",
-    "UserID": 1,
-    "Password": "one",
-    "IsAdmin": false
-  },
-  {
-    "UserName": "Destina",
-    "UserID": 2,
-    "Password": "idk",
-    "IsAdmin": true
-  },
-  {
-    "UserName": "nuts",
-    "UserID": 3,
-    "Password": "idkagain",
-    "IsAdmin": false
-  },
-  {
-    "UserName": "friso",
-    "UserID": 4,
-    "Password": "123",
-    "IsAdmin": false
   }
 ]
