@@ -23,7 +23,7 @@ namespace Student_Housing_BV
             InitializeComponent();
             this.loggedInUser = loggedInUser;
             this.handleUsers = users;
-            lbWelcomeUser.Text = $"Welcome {this.loggedInUser.userName}";
+            lbWelcomeUser.Text = $"Welcome {this.loggedInUser.UserName}";
         }
 
         private void btnViewUsers_Click(object sender, EventArgs e)

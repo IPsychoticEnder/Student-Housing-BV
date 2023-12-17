@@ -12,13 +12,13 @@ namespace Student_Housing_BV.Classes
 {
     public class HandleUsers
     {
-        public List<User> users { get; private set; }
+        public List<User> Users { get; private set; }
 
-        public string filePath { get; private set; }
+        public string FilePath { get; private set; }
 
         public HandleUsers()
         {
-            users = new List<User>();
+            Users = new List<User>();
 
             string relativeFilepath = "\\Data\\Json\\Users.json";
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -27,28 +27,28 @@ namespace Student_Housing_BV.Classes
                 currentDirectory = Directory.GetParent(currentDirectory).FullName;
             }
 
-            this.filePath = $"{currentDirectory}{relativeFilepath}";
+            this.FilePath = $"{currentDirectory}{relativeFilepath}";
             ReadFromJson();
         }
 
         public void AddUser(string userName, string password, bool isAdmin)
         {
-            int userID = users.Last().userID + 1;
-            User newUser = new User(userName, userID, password, isAdmin);
-            users.Add(newUser);
+            int userID = Users.Last().UserID + 1;
+            User newUser = new(userName, userID, password, isAdmin);
+            Users.Add(newUser);
             WriteToJson();
         }
 
         public void RemoveUser(User toBeRemvedUser)
         {
-            if (users.Contains(toBeRemvedUser))
+            if (Users.Contains(toBeRemvedUser))
             {
-                users.Remove(toBeRemvedUser);
+                Users.Remove(toBeRemvedUser);
             }
             int queueUserID = 0;
-            foreach (User user in users)
+            foreach (User user in Users)
             {
-                user.userID = queueUserID;
+                user.UserID = queueUserID;
                 queueUserID++;
             }
             WriteToJson();
@@ -56,23 +56,23 @@ namespace Student_Housing_BV.Classes
 
         public void EditUser(User editedUser)
         {
-            foreach(User user in users)
+            foreach(User user in Users)
             {
-                if (user.userID == editedUser.userID)
+                if (user.UserID == editedUser.UserID)
                 {
-                    user.userName =  editedUser.userName;
-                    user.password = editedUser.password;
-                    user.isAdmin = editedUser.isAdmin;
+                    user.UserName =  editedUser.UserName;
+                    user.Password = editedUser.Password;
+                    user.IsAdmin = editedUser.IsAdmin;
                 }
             }
             WriteToJson();
         }
 
-        public User ValidateUser(User toBeValidatedUser)
+        public User? ValidateUser(User toBeValidatedUser)
         {
-            foreach (User user in users)
+            foreach (User user in Users)
             {
-                if (toBeValidatedUser.userName == user.userName && toBeValidatedUser.password == user.password)
+                if (toBeValidatedUser.UserName == user.UserName && toBeValidatedUser.Password == user.Password)
                 {
                     return user;
                 }
@@ -84,9 +84,9 @@ namespace Student_Housing_BV.Classes
         {
             try
             {
-                string jsonContent = JsonConvert.SerializeObject(users, Formatting.Indented);
-                File.WriteAllText(filePath, jsonContent);
-                Console.WriteLine($"Data succesfully written to: {filePath}");
+                string jsonContent = JsonConvert.SerializeObject(Users, Formatting.Indented);
+                File.WriteAllText(FilePath, jsonContent);
+                Console.WriteLine($"Data succesfully written to: {FilePath}");
             }
             catch (Exception ex)
             {
@@ -98,10 +98,10 @@ namespace Student_Housing_BV.Classes
         {
             try
             {
-                string jsonContent = File.ReadAllText(filePath);
+                string jsonContent = File.ReadAllText(FilePath);
 
-                this.users = JsonConvert.DeserializeObject<List<User>>(jsonContent);
-                Console.WriteLine($"Succesfully read from: {filePath}");
+                this.Users = JsonConvert.DeserializeObject<List<User>>(jsonContent);
+                Console.WriteLine($"Succesfully read from: {FilePath}");
             } 
             catch (Exception ex) 
             {

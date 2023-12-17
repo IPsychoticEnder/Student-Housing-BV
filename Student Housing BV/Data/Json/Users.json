@@ -1,32 +1,32 @@
 [
   {
-    "userName": "admin",
-    "userID": 0,
-    "password": "ADMIN",
-    "isAdmin": true
+    "UserName": "admin",
+    "UserID": 0,
+    "Password": "ADMIN",
+    "IsAdmin": true
   },
   {
-    "userName": "Ayayron",
-    "userID": 1,
-    "password": "one",
-    "isAdmin": false
+    "UserName": "Ayayron",
+    "UserID": 1,
+    "Password": "one",
+    "IsAdmin": false
   },
   {
-    "userName": "Destina",
-    "userID": 2,
-    "password": "idk",
-    "isAdmin": true
+    "UserName": "Destina",
+    "UserID": 2,
+    "Password": "idk",
+    "IsAdmin": true
   },
   {
-    "userName": "nuts",
-    "userID": 3,
-    "password": "idkagain",
-    "isAdmin": false
+    "UserName": "nuts",
+    "UserID": 3,
+    "Password": "idkagain",
+    "IsAdmin": false
   },
   {
-    "userName": "friso",
-    "userID": 4,
-    "password": "123",
-    "isAdmin": false
+    "UserName": "friso",
+    "UserID": 4,
+    "Password": "123",
+    "IsAdmin": false
   }
 ]

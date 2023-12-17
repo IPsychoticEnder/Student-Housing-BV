@@ -16,20 +16,20 @@ namespace Student_Housing_BV.Forms.UsersView
             InitializeComponent();
             this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
-            this.users = handleUsers.users;
+            this.users = handleUsers.Users;
 
             foreach (User user in users)
             {
-                if (user.userID == rowIndex)
+                if (user.UserID == rowIndex)
                 {
                     this.userBeingEdited = user;
                 }
             }
 
-            tbEditUserUserName.Text = userBeingEdited.userName;
-            tbEditUserUserID.Text = Convert.ToString(userBeingEdited.userID);
-            tbEditUserUserPassword.Text = userBeingEdited.password;
-            cbEditUserUserAdminAccess.Checked = userBeingEdited.isAdmin;
+            tbEditUserUserName.Text = userBeingEdited.UserName;
+            tbEditUserUserID.Text = Convert.ToString(userBeingEdited.UserID);
+            tbEditUserUserPassword.Text = userBeingEdited.Password;
+            cbEditUserUserAdminAccess.Checked = userBeingEdited.IsAdmin;
         }
 
         private void btnEditUser_Click(object sender, EventArgs e)

@@ -15,7 +15,7 @@ namespace Student_Housing_BV.Forms
             this.loggedInUser = loggedInUser;
 
 
-            List<User> users = handleUsers.users;
+            List<User> users = handleUsers.Users;
             foreach (User user in users)
             {
                 dtgridDisplayAllUsers.DataSource = users;

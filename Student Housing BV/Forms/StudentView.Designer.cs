@@ -29,25 +29,35 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(669, 493);
+            label1.Location = new Point(567, 208);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
-            label1.Size = new Size(241, 32);
+            label1.Size = new Size(0, 32);
             label1.TabIndex = 0;
-            label1.Text = "This user is a Student";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(567, 448);
+            label2.Margin = new Padding(6, 0, 6, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 32);
+            label2.TabIndex = 1;
             // 
             // StudentView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1486, 960);
+            ClientSize = new Size(1374, 929);
+            Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "StudentView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StudentView";
@@ -58,5 +68,6 @@
         #endregion
 
         private Label label1;
+        private Label label2;
     }
 }

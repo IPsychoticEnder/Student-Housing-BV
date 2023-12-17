@@ -4,32 +4,33 @@ namespace Student_Housing_BV
 {
     public partial class LoginView : Form
     {
-        HandleUsers handleUsers = new HandleUsers();
+        readonly HandleUsers users = new();
+        readonly HandleUsers handleUsers = new();
 
         public LoginView()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             string userName = tbLoginUserID.Text;
             string password = tbLoginUserPassword.Text;
 
-            User toBeValidatedUser = new User(userName, -1, password, false);
-            User validatedUser = handleUsers.ValidateUser(toBeValidatedUser);
+            User toBeValidatedUser = new(userName, -1, password, false);
+            User validatedUser = users.ValidateUser(toBeValidatedUser);
 
             if (validatedUser != null)
             {
-                if (validatedUser.isAdmin)
+                if (validatedUser.IsAdmin)
                 {
-                    AdminView adminView = new AdminView(handleUsers, validatedUser);
+                    AdminView adminView = new(handleUsers, validatedUser);
                     adminView.Show();
                     this.Hide();
                 }
                 else
                 {
-                    StudentView studentView = new StudentView(validatedUser);
+                    StudentView studentView = new(validatedUser);
                     studentView.Show();
                     this.Hide();
                 }

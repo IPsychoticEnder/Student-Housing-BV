@@ -13,11 +13,14 @@ namespace Student_Housing_BV
 {
     public partial class StudentView : Form
     {
-        public User loggedInUser { get; set; }
+        public User LoggedInUser;
 
         public StudentView(User loggedInUser)
         {
             InitializeComponent();
+            this.LoggedInUser = loggedInUser;
+            label1.Text = $"Welcome {loggedInUser.UserName}";
+            label2.Text = $"Admin access: {loggedInUser.IsAdmin}";
         }
     }
 }
