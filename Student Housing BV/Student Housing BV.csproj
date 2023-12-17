@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Forms\AdminView\AdminViewTasks\" />
-    <Folder Include="Forms\AdminView\AdminViewAgreements\" />
   </ItemGroup>
 
 </Project>
