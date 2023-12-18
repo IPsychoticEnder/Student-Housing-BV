@@ -31,7 +31,9 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
+            AgreementsListView agreementsListView = new(HandleUsers, LoggedInUser);
+            agreementsListView.Show();
+            this.Close();
         }
     }
 }
