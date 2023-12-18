@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Housing_BV.Classes
 {
-    internal class Agreement
+    public class Agreement
     {
         public string Title { get; set; }
         public string Description { get; set; }

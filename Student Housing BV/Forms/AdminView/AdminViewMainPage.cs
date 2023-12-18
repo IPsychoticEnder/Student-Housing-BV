@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Student_Housing_BV.Classes;
 using Student_Housing_BV.Forms;
+using Student_Housing_BV.Forms.AdminView.AdminViewAgreements;
+using Student_Housing_BV.Forms.AdminView.AdminViewTasks;
+using System.Data;
 
 namespace Student_Housing_BV
 {
@@ -28,11 +22,25 @@ namespace Student_Housing_BV
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
+            UsersListView usersListView = new(handleUsers, loggedInUse);
             usersListView.Show();
             this.Hide();
         }
 
+        private void btnViewTasks_Click(object sender, EventArgs e)
+        {
+            TasksListView tasksListView = new();
+            tasksListView.Show();
+            this.Close();
+        }
+
+        private void btnViewAgreements_Click(object sender, EventArgs e)
+        {
+            AgreementsListView agreementsListView = new(handleUsers, loggedInUser);
+            agreementsListView.Show();
+            this.Close();
+        }
+      
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             LoginView loginView = new LoginView();

@@ -31,25 +31,22 @@
             components = new System.ComponentModel.Container();
             btnAddUser = new Button();
             btnBackToAdminView = new Button();
-            dtgridDisplayAllUsers = new DataGridView();
-            userIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            userNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            isAdminDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            userBindingSource1 = new BindingSource(components);
-            handleUsersBindingSource = new BindingSource(components);
+            dataGridDisplayAllUsers = new DataGridView();
             userBindingSource = new BindingSource(components);
-            ((System.ComponentModel.ISupportInitialize)dtgridDisplayAllUsers).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)userBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)handleUsersBindingSource).BeginInit();
+            isAdminDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            userNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            userIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllUsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             SuspendLayout();
             // 
             // btnAddUser
             // 
-            btnAddUser.Location = new Point(986, 108);
+            btnAddUser.Location = new Point(546, 51);
+            btnAddUser.Margin = new Padding(2, 1, 2, 1);
             btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(150, 78);
+            btnAddUser.Size = new Size(81, 37);
             btnAddUser.TabIndex = 0;
             btnAddUser.Text = "Add User";
             btnAddUser.UseVisualStyleBackColor = true;
@@ -57,95 +54,83 @@
             // 
             // btnBackToAdminView
             // 
-            btnBackToAdminView.Location = new Point(190, 108);
+            btnBackToAdminView.Location = new Point(102, 51);
+            btnBackToAdminView.Margin = new Padding(2, 1, 2, 1);
             btnBackToAdminView.Name = "btnBackToAdminView";
-            btnBackToAdminView.Size = new Size(150, 78);
+            btnBackToAdminView.Size = new Size(81, 37);
             btnBackToAdminView.TabIndex = 1;
             btnBackToAdminView.Text = "Back";
             btnBackToAdminView.UseVisualStyleBackColor = true;
             btnBackToAdminView.Click += btnBackToAdminView_Click;
             // 
-            // dtgridDisplayAllUsers
+            // dataGridDisplayAllUsers
             // 
-            dtgridDisplayAllUsers.AllowUserToResizeColumns = false;
-            dtgridDisplayAllUsers.AllowUserToResizeRows = false;
-            dtgridDisplayAllUsers.AutoGenerateColumns = false;
-            dtgridDisplayAllUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgridDisplayAllUsers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dtgridDisplayAllUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgridDisplayAllUsers.Columns.AddRange(new DataGridViewColumn[] { userIDDataGridViewTextBoxColumn, userNameDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, isAdminDataGridViewCheckBoxColumn });
-            dtgridDisplayAllUsers.DataSource = userBindingSource1;
-            dtgridDisplayAllUsers.Location = new Point(124, 239);
-            dtgridDisplayAllUsers.MultiSelect = false;
-            dtgridDisplayAllUsers.Name = "dtgridDisplayAllUsers";
-            dtgridDisplayAllUsers.ReadOnly = true;
-            dtgridDisplayAllUsers.RowHeadersWidth = 82;
-            dtgridDisplayAllUsers.RowTemplate.Height = 41;
-            dtgridDisplayAllUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgridDisplayAllUsers.Size = new Size(1080, 634);
-            dtgridDisplayAllUsers.TabIndex = 3;
-            dtgridDisplayAllUsers.CellDoubleClick += dtgridDisplayAllUsers_CellDoubleClick;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            userIDDataGridViewTextBoxColumn.DataPropertyName = "userID";
-            userIDDataGridViewTextBoxColumn.HeaderText = "userID";
-            userIDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            userIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            userNameDataGridViewTextBoxColumn.DataPropertyName = "userName";
-            userNameDataGridViewTextBoxColumn.HeaderText = "userName";
-            userNameDataGridViewTextBoxColumn.MinimumWidth = 10;
-            userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            userNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            passwordDataGridViewTextBoxColumn.MinimumWidth = 10;
-            passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            passwordDataGridViewTextBoxColumn.ReadOnly = true;
-            passwordDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // isAdminDataGridViewCheckBoxColumn
-            // 
-            isAdminDataGridViewCheckBoxColumn.DataPropertyName = "isAdmin";
-            isAdminDataGridViewCheckBoxColumn.HeaderText = "isAdmin";
-            isAdminDataGridViewCheckBoxColumn.MinimumWidth = 10;
-            isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
-            isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // userBindingSource1
-            // 
-            userBindingSource1.DataSource = typeof(Classes.User);
-            // 
-            // handleUsersBindingSource
-            // 
-            handleUsersBindingSource.DataSource = typeof(Classes.HandleUsers);
+            dataGridDisplayAllUsers.AllowUserToResizeColumns = false;
+            dataGridDisplayAllUsers.AllowUserToResizeRows = false;
+            dataGridDisplayAllUsers.AutoGenerateColumns = false;
+            dataGridDisplayAllUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridDisplayAllUsers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridDisplayAllUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridDisplayAllUsers.Columns.AddRange(new DataGridViewColumn[] { userIDDataGridViewTextBoxColumn, userNameDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, isAdminDataGridViewCheckBoxColumn });
+            dataGridDisplayAllUsers.DataSource = userBindingSource;
+            dataGridDisplayAllUsers.Location = new Point(77, 113);
+            dataGridDisplayAllUsers.Margin = new Padding(2, 1, 2, 1);
+            dataGridDisplayAllUsers.MultiSelect = false;
+            dataGridDisplayAllUsers.Name = "dataGridDisplayAllUsers";
+            dataGridDisplayAllUsers.ReadOnly = true;
+            dataGridDisplayAllUsers.RowHeadersWidth = 82;
+            dataGridDisplayAllUsers.RowTemplate.Height = 41;
+            dataGridDisplayAllUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridDisplayAllUsers.Size = new Size(582, 297);
+            dataGridDisplayAllUsers.TabIndex = 3;
+            dataGridDisplayAllUsers.CellDoubleClick += dtgridDisplayAllUsers_CellDoubleClick;
             // 
             // userBindingSource
             // 
             userBindingSource.DataSource = typeof(Classes.User);
             // 
+            // isAdminDataGridViewCheckBoxColumn
+            // 
+            isAdminDataGridViewCheckBoxColumn.DataPropertyName = "IsAdmin";
+            isAdminDataGridViewCheckBoxColumn.HeaderText = "IsAdmin";
+            isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
+            isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            userNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            userIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // UsersListView
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(1374, 929);
-            Controls.Add(dtgridDisplayAllUsers);
+            ClientSize = new Size(740, 435);
+            Controls.Add(dataGridDisplayAllUsers);
             Controls.Add(btnBackToAdminView);
             Controls.Add(btnAddUser);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "UsersListView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UsersListView";
-            ((System.ComponentModel.ISupportInitialize)dtgridDisplayAllUsers).EndInit();
-            ((System.ComponentModel.ISupportInitialize)userBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)handleUsersBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -154,10 +139,8 @@
 
         private Button btnAddUser;
         private Button btnBackToAdminView;
-        private DataGridView dtgridDisplayAllUsers;
+        private DataGridView dataGridDisplayAllUsers;
         private BindingSource userBindingSource;
-        private BindingSource handleUsersBindingSource;
-        private BindingSource userBindingSource1;
         private DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;

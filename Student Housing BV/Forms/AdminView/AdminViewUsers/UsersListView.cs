@@ -19,7 +19,7 @@ namespace Student_Housing_BV.Forms
             List<User> users = handleUsers.Users;
             foreach (User user in users)
             {
-                dtgridDisplayAllUsers.DataSource = users;
+                dataGridDisplayAllUsers.DataSource = users;
             }
         }
 

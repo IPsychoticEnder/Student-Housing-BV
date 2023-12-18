@@ -41,28 +41,42 @@ namespace Student_Housing_BV.Classes
 
         public void RemoveUser(User toBeRemvedUser)
         {
-            if (Users.Contains(toBeRemvedUser))
+            if (toBeRemvedUser.UserID == 0)
             {
-                Users.Remove(toBeRemvedUser);
+                MessageBox.Show("Cannot remove ADMIN");
             }
-            int queueUserID = 0;
-            foreach (User user in Users)
+            else
             {
-                user.UserID = queueUserID;
-                queueUserID++;
+                if (Users.Contains(toBeRemvedUser))
+                {
+                    Users.Remove(toBeRemvedUser);
+                }
+                int queueUserID = 0;
+                foreach (User user in Users)
+                {
+                    user.UserID = queueUserID;
+                    queueUserID++;
+                }
             }
             WriteToJson();
         }
 
         public void EditUser(User editedUser)
         {
-            foreach(User user in Users)
+            if (editedUser.UserID == 0)
             {
-                if (user.UserID == editedUser.UserID)
+                MessageBox.Show("This user cannot be edited");
+            }
+            else
+            {
+                foreach (User user in Users)
                 {
-                    user.UserName =  editedUser.UserName;
-                    user.Password = editedUser.Password;
-                    user.IsAdmin = editedUser.IsAdmin;
+                    if (user.UserID == editedUser.UserID)
+                    {
+                        user.UserName = editedUser.UserName;
+                        user.Password = editedUser.Password;
+                        user.IsAdmin = editedUser.IsAdmin;
+                    }
                 }
             }
             WriteToJson();
