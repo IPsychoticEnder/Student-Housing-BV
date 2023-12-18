@@ -1,5 +1,6 @@
 ﻿using Student_Housing_BV.Classes;
 using Student_Housing_BV.Forms.UsersView;
+using Student_Housing_BV.Forms.AdminView;
 
 namespace Student_Housing_BV.Forms
 {

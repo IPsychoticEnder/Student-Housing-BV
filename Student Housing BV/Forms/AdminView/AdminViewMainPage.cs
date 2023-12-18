@@ -1,7 +1,8 @@
-﻿using Student_Housing_BV.Classes;
+using Student_Housing_BV.Classes;
 using Student_Housing_BV.Forms;
 using Student_Housing_BV.Forms.AdminView.AdminViewAgreements;
 using Student_Housing_BV.Forms.AdminView.AdminViewTasks;
+using System.Data;
 
 namespace Student_Housing_BV
 {
@@ -21,7 +22,7 @@ namespace Student_Housing_BV
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new(handleUsers, loggedInUser);
+            UsersListView usersListView = new(handleUsers, loggedInUse);
             usersListView.Show();
             this.Hide();
         }
@@ -39,10 +40,10 @@ namespace Student_Housing_BV
             agreementsListView.Show();
             this.Close();
         }
-
+      
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            LoginView loginView = new();
+            LoginView loginView = new LoginView();
             loginView.Show();
             this.Close();
         }

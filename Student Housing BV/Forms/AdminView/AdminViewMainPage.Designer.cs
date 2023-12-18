@@ -38,10 +38,9 @@
             // 
             // btnViewUsers
             // 
-            btnViewUsers.Location = new Point(93, 85);
-            btnViewUsers.Margin = new Padding(2, 1, 2, 1);
+            btnViewUsers.Location = new Point(172, 182);
             btnViewUsers.Name = "btnViewUsers";
-            btnViewUsers.Size = new Size(233, 114);
+            btnViewUsers.Size = new Size(432, 243);
             btnViewUsers.TabIndex = 0;
             btnViewUsers.Text = "Users";
             btnViewUsers.UseVisualStyleBackColor = true;
@@ -85,10 +84,9 @@
             lbWelcomeUser.AutoSize = true;
             lbWelcomeUser.Font = new Font("Segoe UI", 19.875F, FontStyle.Regular, GraphicsUnit.Point);
             lbWelcomeUser.ForeColor = Color.White;
-            lbWelcomeUser.Location = new Point(269, 28);
-            lbWelcomeUser.Margin = new Padding(2, 0, 2, 0);
+            lbWelcomeUser.Location = new Point(500, 60);
             lbWelcomeUser.Name = "lbWelcomeUser";
-            lbWelcomeUser.Size = new Size(0, 37);
+            lbWelcomeUser.Size = new Size(0, 71);
             lbWelcomeUser.TabIndex = 4;
             lbWelcomeUser.TextAlign = ContentAlignment.MiddleCenter;
             // 
