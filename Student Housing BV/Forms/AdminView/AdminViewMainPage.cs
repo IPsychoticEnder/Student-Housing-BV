@@ -22,7 +22,7 @@ namespace Student_Housing_BV
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new(handleUsers, loggedInUse);
+            UsersListView usersListView = new(handleUsers, loggedInUser);
             usersListView.Show();
             this.Hide();
         }
@@ -40,7 +40,7 @@ namespace Student_Housing_BV
             agreementsListView.Show();
             this.Close();
         }
-      
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             LoginView loginView = new LoginView();

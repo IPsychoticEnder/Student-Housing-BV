@@ -38,9 +38,10 @@
             // 
             // btnViewUsers
             // 
-            btnViewUsers.Location = new Point(172, 182);
+            btnViewUsers.Location = new Point(173, 181);
+            btnViewUsers.Margin = new Padding(6);
             btnViewUsers.Name = "btnViewUsers";
-            btnViewUsers.Size = new Size(432, 243);
+            btnViewUsers.Size = new Size(433, 243);
             btnViewUsers.TabIndex = 0;
             btnViewUsers.Text = "Users";
             btnViewUsers.UseVisualStyleBackColor = true;
@@ -48,10 +49,10 @@
             // 
             // btnViewTasks
             // 
-            btnViewTasks.Location = new Point(417, 85);
-            btnViewTasks.Margin = new Padding(2, 1, 2, 1);
+            btnViewTasks.Location = new Point(774, 181);
+            btnViewTasks.Margin = new Padding(4, 2, 4, 2);
             btnViewTasks.Name = "btnViewTasks";
-            btnViewTasks.Size = new Size(233, 114);
+            btnViewTasks.Size = new Size(433, 243);
             btnViewTasks.TabIndex = 1;
             btnViewTasks.Text = "Tasks";
             btnViewTasks.UseVisualStyleBackColor = true;
@@ -59,10 +60,10 @@
             // 
             // btnViewAgreements
             // 
-            btnViewAgreements.Location = new Point(93, 269);
-            btnViewAgreements.Margin = new Padding(2, 1, 2, 1);
+            btnViewAgreements.Location = new Point(173, 574);
+            btnViewAgreements.Margin = new Padding(4, 2, 4, 2);
             btnViewAgreements.Name = "btnViewAgreements";
-            btnViewAgreements.Size = new Size(233, 114);
+            btnViewAgreements.Size = new Size(433, 243);
             btnViewAgreements.TabIndex = 2;
             btnViewAgreements.Text = "Agreements";
             btnViewAgreements.UseVisualStyleBackColor = true;
@@ -70,10 +71,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(417, 269);
-            button4.Margin = new Padding(2, 1, 2, 1);
+            button4.Location = new Point(774, 574);
+            button4.Margin = new Padding(4, 2, 4, 2);
             button4.Name = "button4";
-            button4.Size = new Size(233, 114);
+            button4.Size = new Size(433, 243);
             button4.TabIndex = 3;
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
@@ -84,7 +85,8 @@
             lbWelcomeUser.AutoSize = true;
             lbWelcomeUser.Font = new Font("Segoe UI", 19.875F, FontStyle.Regular, GraphicsUnit.Point);
             lbWelcomeUser.ForeColor = Color.White;
-            lbWelcomeUser.Location = new Point(500, 60);
+            lbWelcomeUser.Location = new Point(524, 71);
+            lbWelcomeUser.Margin = new Padding(6, 0, 6, 0);
             lbWelcomeUser.Name = "lbWelcomeUser";
             lbWelcomeUser.Size = new Size(0, 71);
             lbWelcomeUser.TabIndex = 4;
@@ -92,10 +94,10 @@
             // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(13, 13);
-            btnLogOut.Margin = new Padding(2, 1, 2, 1);
+            btnLogOut.Location = new Point(24, 28);
+            btnLogOut.Margin = new Padding(4, 2, 4, 2);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(63, 25);
+            btnLogOut.Size = new Size(117, 53);
             btnLogOut.TabIndex = 5;
             btnLogOut.Text = "Logout";
             btnLogOut.UseVisualStyleBackColor = true;
@@ -103,16 +105,17 @@
             // 
             // AdminViewMainPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(740, 435);
+            ClientSize = new Size(1374, 928);
             Controls.Add(btnLogOut);
             Controls.Add(lbWelcomeUser);
             Controls.Add(button4);
             Controls.Add(btnViewAgreements);
             Controls.Add(btnViewTasks);
             Controls.Add(btnViewUsers);
+            Margin = new Padding(6);
             Name = "AdminViewMainPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminView";
