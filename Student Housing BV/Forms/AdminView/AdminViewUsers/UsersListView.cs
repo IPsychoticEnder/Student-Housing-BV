@@ -1,6 +1,5 @@
 ﻿using Student_Housing_BV.Classes;
 using Student_Housing_BV.Forms.UsersView;
-using Student_Housing_BV.Forms.AdminView;
 
 namespace Student_Housing_BV.Forms
 {
@@ -17,10 +16,8 @@ namespace Student_Housing_BV.Forms
 
 
             List<User> users = handleUsers.Users;
-            foreach (User user in users)
-            {
-                dataGridDisplayAllUsers.DataSource = users;
-            }
+            dataGridDisplayAllUsers.DataSource = users;
+            
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -37,7 +34,7 @@ namespace Student_Housing_BV.Forms
             this.Close();
         }
 
-        private void dtgridDisplayAllUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridDisplayAllUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int userID = e.RowIndex;
 

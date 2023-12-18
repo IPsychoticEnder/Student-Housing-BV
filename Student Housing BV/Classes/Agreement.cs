@@ -18,5 +18,10 @@ namespace Student_Housing_BV.Classes
             Description = description;
             ID = iD;
         }
+
+        public override string ToString()
+        {
+            return $"{this.Title} | {this.Description} | {this.ID}";
+        }
     }
 }

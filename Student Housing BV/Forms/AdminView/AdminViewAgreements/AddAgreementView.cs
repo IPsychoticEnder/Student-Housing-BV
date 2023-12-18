@@ -6,11 +6,15 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
     public partial class AddAgreementView : Form
     {
         HandleAgreements HandleAgreements {  get; set; }
+        HandleUsers HandleUsers { get; set; }
+        User LoggedInUser { get; set; }
 
-        public AddAgreementView(HandleAgreements handleAgreements)
+        public AddAgreementView(HandleUsers handleUsers, User loggedInUser, HandleAgreements handleAgreements)
         {
             InitializeComponent();
             this.HandleAgreements = handleAgreements;
+            this.HandleUsers = handleUsers;
+            this.LoggedInUser = loggedInUser;
         }
 
         private void btnAddAgreement_Click(object sender, EventArgs e)
@@ -19,6 +23,10 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             string Description = tbNewAgreementDescription.Text;
 
             HandleAgreements.AddAgreement(Title, Description);
+
+            AgreementsListView agreementsListView = new(HandleUsers, LoggedInUser);
+            agreementsListView.Show();
+            this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

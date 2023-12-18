@@ -83,7 +83,7 @@
             dataGridDisplayAllUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridDisplayAllUsers.Size = new Size(582, 297);
             dataGridDisplayAllUsers.TabIndex = 3;
-            dataGridDisplayAllUsers.CellDoubleClick += dtgridDisplayAllUsers_CellDoubleClick;
+            dataGridDisplayAllUsers.CellDoubleClick += dataGridDisplayAllUsers_CellDoubleClick;
             // 
             // userBindingSource
             // 
