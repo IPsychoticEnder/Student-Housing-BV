@@ -1,6 +1,5 @@
-﻿
+﻿using Student_Housing_BV.Classes;
 
-using Student_Housing_BV.Classes;
 
 namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 {
@@ -20,16 +19,12 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             this.loggedInUser = loggedInUser;
 
             agreements = handleAgreements.Agreements;
-
-            foreach (Agreement agreement in agreements)
-            {
-                dataGridDisplayAllAgreements.DataSource = agreement;
-            }
+            dataGridDisplayAllAgreements.DataSource = agreements;
         }
 
         private void btnAddAgreement_Click(object sender, EventArgs e)
         {
-            AddAgreementView addAgreementView = new(handleAgreements);
+            AddAgreementView addAgreementView = new(handleUsers, loggedInUser, handleAgreements);
             addAgreementView.Show();
             this.Hide();
         }
@@ -39,6 +34,11 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             AdminViewMainPage adminViewMainPage = new(handleUsers, loggedInUser);
             adminViewMainPage.Show();
             this.Close();
+        }
+
+        private void dataGridDisplayAllAgreements_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

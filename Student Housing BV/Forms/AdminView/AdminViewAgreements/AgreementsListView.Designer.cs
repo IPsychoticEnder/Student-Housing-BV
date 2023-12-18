@@ -29,14 +29,18 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnBackToAdminView = new Button();
             btnAddAgreement = new Button();
             dataGridDisplayAllAgreements = new DataGridView();
-            agreementBindingSource = new BindingSource(components);
+            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             titleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            iDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            agreementBindingSource1 = new BindingSource(components);
+            agreementBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllAgreements).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)agreementBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)agreementBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -65,31 +69,48 @@
             // dataGridDisplayAllAgreements
             // 
             dataGridDisplayAllAgreements.AllowUserToResizeColumns = false;
-            dataGridDisplayAllAgreements.AllowUserToResizeRows = false;
             dataGridDisplayAllAgreements.AutoGenerateColumns = false;
             dataGridDisplayAllAgreements.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridDisplayAllAgreements.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridDisplayAllAgreements.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridDisplayAllAgreements.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridDisplayAllAgreements.Columns.AddRange(new DataGridViewColumn[] { titleDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, iDDataGridViewTextBoxColumn });
-            dataGridDisplayAllAgreements.DataSource = agreementBindingSource;
+            dataGridDisplayAllAgreements.Columns.AddRange(new DataGridViewColumn[] { iDDataGridViewTextBoxColumn, titleDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn });
+            dataGridDisplayAllAgreements.DataSource = agreementBindingSource1;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridDisplayAllAgreements.DefaultCellStyle = dataGridViewCellStyle1;
             dataGridDisplayAllAgreements.Location = new Point(143, 241);
             dataGridDisplayAllAgreements.Margin = new Padding(4, 2, 4, 2);
             dataGridDisplayAllAgreements.MultiSelect = false;
             dataGridDisplayAllAgreements.Name = "dataGridDisplayAllAgreements";
             dataGridDisplayAllAgreements.ReadOnly = true;
             dataGridDisplayAllAgreements.RowHeadersWidth = 82;
+            dataGridViewCellStyle2.Padding = new Padding(0, 5, 0, 5);
+            dataGridDisplayAllAgreements.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridDisplayAllAgreements.RowTemplate.Height = 41;
             dataGridDisplayAllAgreements.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridDisplayAllAgreements.Size = new Size(1081, 634);
             dataGridDisplayAllAgreements.TabIndex = 4;
+            dataGridDisplayAllAgreements.CellDoubleClick += dataGridDisplayAllAgreements_CellDoubleClick;
             // 
-            // agreementBindingSource
+            // iDDataGridViewTextBoxColumn
             // 
-            agreementBindingSource.DataSource = typeof(Classes.Agreement);
+            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            iDDataGridViewTextBoxColumn.FillWeight = 25F;
+            iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            iDDataGridViewTextBoxColumn.MinimumWidth = 10;
+            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            iDDataGridViewTextBoxColumn.ReadOnly = true;
+            iDDataGridViewTextBoxColumn.Visible = false;
             // 
             // titleDataGridViewTextBoxColumn
             // 
             titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            titleDataGridViewTextBoxColumn.FillWeight = 50F;
             titleDataGridViewTextBoxColumn.HeaderText = "Title";
             titleDataGridViewTextBoxColumn.MinimumWidth = 10;
             titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
@@ -103,13 +124,13 @@
             descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // agreementBindingSource1
             // 
-            iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            iDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            iDDataGridViewTextBoxColumn.ReadOnly = true;
+            agreementBindingSource1.DataSource = typeof(Classes.Agreement);
+            // 
+            // agreementBindingSource
+            // 
+            agreementBindingSource.DataSource = typeof(Classes.Agreement);
             // 
             // AgreementsListView
             // 
@@ -120,11 +141,12 @@
             Controls.Add(dataGridDisplayAllAgreements);
             Controls.Add(btnBackToAdminView);
             Controls.Add(btnAddAgreement);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "AgreementsListView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgreementsListView";
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllAgreements).EndInit();
+            ((System.ComponentModel.ISupportInitialize)agreementBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)agreementBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -134,9 +156,10 @@
         private Button btnBackToAdminView;
         private Button btnAddAgreement;
         private DataGridView dataGridDisplayAllAgreements;
+        private BindingSource agreementBindingSource;
+        private BindingSource agreementBindingSource1;
+        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private BindingSource agreementBindingSource;
     }
 }
