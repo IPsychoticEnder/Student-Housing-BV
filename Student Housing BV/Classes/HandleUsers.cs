@@ -51,12 +51,6 @@ namespace Student_Housing_BV.Classes
                 {
                     Users.Remove(toBeRemvedUser);
                 }
-                int queueUserID = 0;
-                foreach (User user in Users)
-                {
-                    user.UserID = queueUserID;
-                    queueUserID++;
-                }
             }
             WriteToJson();
         }

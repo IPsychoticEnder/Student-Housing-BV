@@ -38,7 +38,9 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 
         private void dataGridDisplayAllAgreements_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int agreementID = e.RowIndex;
+            string thisuser = e.ToString();
+            MessageBox.Show(thisuser);
         }
     }
 }
