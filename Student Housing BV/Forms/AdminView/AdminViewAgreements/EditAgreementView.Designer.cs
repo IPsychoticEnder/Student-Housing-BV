@@ -132,6 +132,7 @@
         }
 
         #endregion
+
         private GroupBox groupBox1;
         private TextBox tbAgreementDescription;
         private TextBox tbAgreementTitle;
