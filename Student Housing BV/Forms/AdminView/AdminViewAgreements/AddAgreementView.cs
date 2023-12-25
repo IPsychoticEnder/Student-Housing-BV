@@ -5,9 +5,10 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 {
     public partial class AddAgreementView : Form
     {
-        HandleAgreements HandleAgreements {  get; set; }
-        HandleUsers HandleUsers { get; set; }
-        User LoggedInUser { get; set; }
+        HandleAgreements HandleAgreements;
+        HandleUsers HandleUsers;
+        User LoggedInUser;
+
 
         public AddAgreementView(HandleUsers handleUsers, User loggedInUser, HandleAgreements handleAgreements)
         {

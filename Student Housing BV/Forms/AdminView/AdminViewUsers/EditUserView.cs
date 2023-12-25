@@ -8,19 +8,16 @@ namespace Student_Housing_BV.Forms.UsersView
     {
         HandleUsers handleUsers;
         User loggedInUser;
+        List<User> users;
         User selectedUser;
-
-        UsersListView usersListView;
-
         public EditUserView(HandleUsers handleUsers, User loggedInUser, User selectedUser)
         {
             InitializeComponent();
 
             this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
+            this.users = handleUsers.Users;
             this.selectedUser = selectedUser;
-
-            usersListView = new(handleUsers, loggedInUser);
 
             tbEditUserUserName.Text = selectedUser.UserName;
             tbEditUserUserID.Text = Convert.ToString(selectedUser.UserID);
@@ -45,6 +42,7 @@ namespace Student_Housing_BV.Forms.UsersView
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
             handleUsers.RemoveUser(selectedUser);
+            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
             usersListView.Show();
             this.Close();
         }

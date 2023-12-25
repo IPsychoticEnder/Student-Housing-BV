@@ -5,9 +5,8 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 {
     public partial class AgreementsListView : Form
     {
-        HandleUsers handleUsers = new();
+        HandleUsers handleUsers;
         User loggedInUser;
-
         HandleAgreements handleAgreements = new();
         List<Agreement> agreements = new();
 
@@ -38,9 +37,10 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 
         private void dataGridDisplayAllAgreements_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int agreementID = e.RowIndex;
-            string thisuser = e.ToString();
-            MessageBox.Show(thisuser);
+            Agreement selectedAgreement = (Agreement)dataGridDisplayAllAgreements.SelectedRows[0].DataBoundItem;
+            EditAgreementView editAgreementView = new(handleUsers, loggedInUser, handleAgreements,selectedAgreement);
+            editAgreementView.Show();
+            this.Hide();
         }
     }
 }
