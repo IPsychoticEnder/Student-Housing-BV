@@ -1,11 +1,11 @@
 using Student_Housing_BV.Classes;
 
-
 namespace Student_Housing_BV
 {
     public partial class LoginView : Form
     {
-        HandleUsers handleUsers = new();
+        readonly HandleUsers users = new();
+        readonly HandleUsers handleUsers = new();
 
         public LoginView()
         {
@@ -18,7 +18,7 @@ namespace Student_Housing_BV
             string password = tbLoginUserPassword.Text;
 
             User toBeValidatedUser = new(userName, -1, password, false);
-            User validatedUser = handleUsers.ValidateUser(toBeValidatedUser);
+            User validatedUser = users.ValidateUser(toBeValidatedUser);
 
             if (validatedUser != null)
             {

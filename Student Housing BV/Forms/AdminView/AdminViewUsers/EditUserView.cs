@@ -10,10 +10,10 @@ namespace Student_Housing_BV.Forms.UsersView
         User loggedInUser;
         List<User> users;
         User selectedUser;
+
         public EditUserView(HandleUsers handleUsers, User loggedInUser, User selectedUser)
         {
             InitializeComponent();
-
             this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
             this.users = handleUsers.Users;
@@ -35,6 +35,7 @@ namespace Student_Housing_BV.Forms.UsersView
             User newEditedUser = new User(newUserName, newUserID, newUserPassword, newIsAdmin);
             handleUsers.EditUser(newEditedUser);
 
+            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
             usersListView.Show();
             this.Close();
         }

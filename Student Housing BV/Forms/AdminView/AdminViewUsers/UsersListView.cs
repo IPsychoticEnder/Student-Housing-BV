@@ -1,7 +1,6 @@
 ﻿using Student_Housing_BV.Classes;
 using Student_Housing_BV.Forms.UsersView;
 
-
 namespace Student_Housing_BV.Forms
 {
     public partial class UsersListView : Form
@@ -9,15 +8,12 @@ namespace Student_Housing_BV.Forms
         HandleUsers handleUsers;
         User loggedInUser;
 
-        AddUserView addUserView;
-
         public UsersListView(HandleUsers handleUsers, User loggedInUser)
         {
             InitializeComponent();
             this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
 
-            addUserView = new(handleUsers, loggedInUser);
 
             List<User> users = handleUsers.Users;
             dataGridDisplayAllUsers.DataSource = users;
@@ -26,15 +22,8 @@ namespace Student_Housing_BV.Forms
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
+            AddUserView addUserView = new(handleUsers, loggedInUser);
             addUserView.Show();
-            this.Hide();
-        }
-
-        private void dataGridDisplayAllUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            User selectedUser = (User)dataGridDisplayAllUsers.SelectedRows[0].DataBoundItem;
-            EditUserView editUserView = new(handleUsers, loggedInUser, selectedUser);
-            editUserView.Show();
             this.Hide();
         }
 
@@ -43,6 +32,14 @@ namespace Student_Housing_BV.Forms
             AdminViewMainPage adminView = new(handleUsers, loggedInUser);
             adminView.Show();
             this.Close();
+        }
+
+        private void dataGridDisplayAllUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            User selectedUser = (User)dataGridDisplayAllUsers.SelectedRows[0].DataBoundItem;
+            EditUserView editUserView = new(handleUsers, loggedInUser, selectedUser);
+            editUserView.Show();
+            this.Hide();
         }
     }
 }
