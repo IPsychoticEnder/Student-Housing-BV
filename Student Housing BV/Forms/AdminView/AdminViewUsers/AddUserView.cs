@@ -5,6 +5,8 @@ namespace Student_Housing_BV.Forms
 {
     public partial class AddUserView : Form
     {
+        UsersListView usersListView;
+
         HandleUsers handleUsers;
         User loggedInUser;
 
@@ -13,6 +15,8 @@ namespace Student_Housing_BV.Forms
             InitializeComponent();
             this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
+
+            usersListView = new(handleUsers, loggedInUser);
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -25,7 +29,6 @@ namespace Student_Housing_BV.Forms
 
                 handleUsers.AddUser(userName, password, isAdmin);
 
-                UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
                 usersListView.Show();
                 this.Close();
             }
@@ -37,7 +40,6 @@ namespace Student_Housing_BV.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
             usersListView.Show();
             this.Close();
         }

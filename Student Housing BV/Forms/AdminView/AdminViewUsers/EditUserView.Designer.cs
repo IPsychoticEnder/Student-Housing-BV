@@ -32,7 +32,7 @@
             btnDeleteUser = new Button();
             tbEditUserUserID = new TextBox();
             label3 = new Label();
-            btnAddUser = new Button();
+            btnSaveEditUser = new Button();
             cbEditUserUserAdminAccess = new CheckBox();
             tbEditUserUserPassword = new TextBox();
             tbEditUserUserName = new TextBox();
@@ -47,7 +47,7 @@
             groupBox1.Controls.Add(btnDeleteUser);
             groupBox1.Controls.Add(tbEditUserUserID);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(btnAddUser);
+            groupBox1.Controls.Add(btnSaveEditUser);
             groupBox1.Controls.Add(cbEditUserUserAdminAccess);
             groupBox1.Controls.Add(tbEditUserUserPassword);
             groupBox1.Controls.Add(tbEditUserUserName);
@@ -88,16 +88,16 @@
             label3.TabIndex = 9;
             label3.Text = "User ID:";
             // 
-            // btnAddUser
+            // btnSaveEditUser
             // 
-            btnAddUser.BackColor = Color.FromArgb(192, 255, 192);
-            btnAddUser.Location = new Point(574, 540);
-            btnAddUser.Name = "btnAddUser";
-            btnAddUser.Size = new Size(270, 62);
-            btnAddUser.TabIndex = 8;
-            btnAddUser.Text = "Save";
-            btnAddUser.UseVisualStyleBackColor = false;
-            btnAddUser.Click += btnEditUser_Click;
+            btnSaveEditUser.BackColor = Color.FromArgb(192, 255, 192);
+            btnSaveEditUser.Location = new Point(574, 540);
+            btnSaveEditUser.Name = "btnSaveEditUser";
+            btnSaveEditUser.Size = new Size(270, 62);
+            btnSaveEditUser.TabIndex = 8;
+            btnSaveEditUser.Text = "Save";
+            btnSaveEditUser.UseVisualStyleBackColor = false;
+            btnSaveEditUser.Click += btnEditUser_Click;
             // 
             // cbEditUserUserAdminAccess
             // 
@@ -159,7 +159,7 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button btnAddUser;
+        private Button btnSaveEditUser;
         private CheckBox cbEditUserUserAdminAccess;
         private TextBox tbEditUserUserPassword;
         private TextBox tbEditUserUserName;

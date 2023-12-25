@@ -2,7 +2,7 @@ using Student_Housing_BV.Classes;
 using Student_Housing_BV.Forms;
 using Student_Housing_BV.Forms.AdminView.AdminViewAgreements;
 using Student_Housing_BV.Forms.AdminView.AdminViewTasks;
-using System.Data;
+
 
 namespace Student_Housing_BV
 {
@@ -11,32 +11,37 @@ namespace Student_Housing_BV
         HandleUsers handleUsers;
         User loggedInUser;
 
+        UsersListView usersListView;
+        TasksListView tasksListView;
+        AgreementsListView agreementsListView;
 
-        public AdminViewMainPage(HandleUsers users, User loggedInUser)
+
+        public AdminViewMainPage(HandleUsers handleUsers, User loggedInUser)
         {
             InitializeComponent();
+            this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
-            this.handleUsers = users;
             lbWelcomeUser.Text = $"Welcome {this.loggedInUser.UserName}";
+
+            usersListView = new(handleUsers, loggedInUser);
+            tasksListView = new();
+            agreementsListView = new(handleUsers, loggedInUser);
         }
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new(handleUsers, loggedInUser);
             usersListView.Show();
             this.Hide();
         }
 
         private void btnViewTasks_Click(object sender, EventArgs e)
         {
-            TasksListView tasksListView = new();
             tasksListView.Show();
             this.Close();
         }
 
         private void btnViewAgreements_Click(object sender, EventArgs e)
         {
-            AgreementsListView agreementsListView = new(handleUsers, loggedInUser);
             agreementsListView.Show();
             this.Close();
         }
