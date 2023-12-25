@@ -36,9 +36,8 @@ namespace Student_Housing_BV.Forms
 
         private void dataGridDisplayAllUsers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int userID = e.RowIndex;
-
-            EditUserView editUserView = new(handleUsers, loggedInUser, userID);
+            User selectedUser = (User)dataGridDisplayAllUsers.SelectedRows[0].DataBoundItem;
+            EditUserView editUserView = new(handleUsers, loggedInUser, selectedUser);
             editUserView.Show();
             this.Hide();
         }

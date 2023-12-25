@@ -9,27 +9,20 @@ namespace Student_Housing_BV.Forms.UsersView
         HandleUsers handleUsers;
         User loggedInUser;
         List<User> users;
-        User userBeingEdited;
+        User selectedUser;
 
-        public EditUserView(HandleUsers handleUsers, User loggedInUser, int rowIndex)
+        public EditUserView(HandleUsers handleUsers, User loggedInUser, User selectedUser)
         {
             InitializeComponent();
             this.handleUsers = handleUsers;
             this.loggedInUser = loggedInUser;
             this.users = handleUsers.Users;
+            this.selectedUser = selectedUser;
 
-            foreach (User user in users)
-            {
-                if (user.UserID == rowIndex)
-                {
-                    this.userBeingEdited = user;
-                }
-            }
-
-            tbEditUserUserName.Text = userBeingEdited.UserName;
-            tbEditUserUserID.Text = Convert.ToString(userBeingEdited.UserID);
-            tbEditUserUserPassword.Text = userBeingEdited.Password;
-            cbEditUserUserAdminAccess.Checked = userBeingEdited.IsAdmin;
+            tbEditUserUserName.Text = selectedUser.UserName;
+            tbEditUserUserID.Text = Convert.ToString(selectedUser.UserID);
+            tbEditUserUserPassword.Text = selectedUser.Password;
+            cbEditUserUserAdminAccess.Checked = selectedUser.IsAdmin;
         }
 
         private void btnEditUser_Click(object sender, EventArgs e)
@@ -49,7 +42,7 @@ namespace Student_Housing_BV.Forms.UsersView
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            handleUsers.RemoveUser(userBeingEdited);
+            handleUsers.RemoveUser(selectedUser);
             UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
             usersListView.Show();
             this.Close();

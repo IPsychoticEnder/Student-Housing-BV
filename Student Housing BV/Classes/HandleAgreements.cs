@@ -1,10 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+
 
 namespace Student_Housing_BV.Classes
 {
@@ -27,20 +22,31 @@ namespace Student_Housing_BV.Classes
             this.FilePath = $"{currentDirectory}{relativeFilepath}";
 
             ReadFromJson();
-
         }
 
         public void AddAgreement(string Title, string Description)
         {
-            int ID = 0;
-            if (Agreements.Count > 0)
-            {
-                ID = Agreements.Last().ID + 1;
-            }
-
-            Agreement newAgreement = new(Title, Description, ID);
+            Agreement newAgreement = new(Title, Description);
 
             Agreements.Add(newAgreement);
+            WriteToJson();
+        }
+
+        public void EditAgreement(Agreement oldAgreement, Agreement newAgreement)
+        {
+            if (Agreements.Contains(oldAgreement))
+            {
+                Agreements[Agreements.IndexOf(oldAgreement)] = newAgreement;
+            }
+            WriteToJson();
+        }
+
+        public void RemoveAgreement(Agreement removeAgreement)
+        {
+            if (Agreements.Contains(removeAgreement))
+            {
+                Agreements.Remove(removeAgreement);
+            }
             WriteToJson();
         }
 

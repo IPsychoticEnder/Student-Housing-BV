@@ -6,9 +6,15 @@
     "IsAdmin": true
   },
   {
-    "UserName": "Friso",
+    "UserName": "Destina",
     "UserID": 1,
     "Password": "123",
     "IsAdmin": true
+  },
+  {
+    "UserName": "Aaron",
+    "UserID": 2,
+    "Password": "123",
+    "IsAdmin": false
   }
 ]

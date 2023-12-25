@@ -1,12 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+﻿using Newtonsoft.Json;
+
 
 namespace Student_Housing_BV.Classes
 {
@@ -50,12 +43,6 @@ namespace Student_Housing_BV.Classes
                 if (Users.Contains(toBeRemvedUser))
                 {
                     Users.Remove(toBeRemvedUser);
-                }
-                int queueUserID = 0;
-                foreach (User user in Users)
-                {
-                    user.UserID = queueUserID;
-                    queueUserID++;
                 }
             }
             WriteToJson();
