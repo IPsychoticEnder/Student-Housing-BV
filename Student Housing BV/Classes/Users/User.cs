@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Student_Housing_BV.Classes
+namespace Student_Housing_BV.Classes.Users
 {
     public class User
     {
@@ -15,10 +15,10 @@ namespace Student_Housing_BV.Classes
 
         public User(string userName, int userID, string password, bool isAdmin)
         {
-            this.UserName = userName;
-            this.UserID = userID;
-            this.Password = password;
-            this.IsAdmin = isAdmin;
+            UserName = userName;
+            UserID = userID;
+            Password = password;
+            IsAdmin = isAdmin;
         }
     }
 }

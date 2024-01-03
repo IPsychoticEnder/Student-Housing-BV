@@ -1,4 +1,6 @@
-﻿namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
+﻿using Student_Housing_BV.Classes.Agreements;
+
+namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 {
     partial class AgreementsListView
     {
@@ -126,11 +128,11 @@
             // 
             // agreementBindingSource1
             // 
-            agreementBindingSource1.DataSource = typeof(Classes.Agreement);
+            agreementBindingSource1.DataSource = typeof(Agreement);
             // 
             // agreementBindingSource
             // 
-            agreementBindingSource.DataSource = typeof(Classes.Agreement);
+            agreementBindingSource.DataSource = typeof(Agreement);
             // 
             // AgreementsListView
             // 

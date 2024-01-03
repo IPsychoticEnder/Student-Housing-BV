@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
 
 
-namespace Student_Housing_BV.Classes
+namespace Student_Housing_BV.Classes.Agreements
 {
     public class HandleAgreements
     {
         public List<Agreement> Agreements { get; private set; }
         public string FilePath { get; private set; }
-        
 
-        public HandleAgreements() 
+
+        public HandleAgreements()
         {
             Agreements = new List<Agreement>();
 
@@ -19,7 +19,7 @@ namespace Student_Housing_BV.Classes
             {
                 currentDirectory = Directory.GetParent(currentDirectory).FullName;
             }
-            this.FilePath = $"{currentDirectory}{relativeFilepath}";
+            FilePath = $"{currentDirectory}{relativeFilepath}";
 
             ReadFromJson();
         }
@@ -56,7 +56,7 @@ namespace Student_Housing_BV.Classes
             {
                 string jsonContent = File.ReadAllText(FilePath);
 
-                this.Agreements = JsonConvert.DeserializeObject<List<Agreement>>(jsonContent);
+                Agreements = JsonConvert.DeserializeObject<List<Agreement>>(jsonContent);
                 Console.WriteLine($"Succesfully read from: {FilePath}");
             }
             catch (Exception ex)

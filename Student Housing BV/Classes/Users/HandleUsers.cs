@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 
-namespace Student_Housing_BV.Classes
+namespace Student_Housing_BV.Classes.Users
 {
     public class HandleUsers
     {
@@ -20,7 +20,7 @@ namespace Student_Housing_BV.Classes
                 currentDirectory = Directory.GetParent(currentDirectory).FullName;
             }
 
-            this.FilePath = $"{currentDirectory}{relativeFilepath}";
+            FilePath = $"{currentDirectory}{relativeFilepath}";
             ReadFromJson();
         }
 
@@ -101,10 +101,10 @@ namespace Student_Housing_BV.Classes
             {
                 string jsonContent = File.ReadAllText(FilePath);
 
-                this.Users = JsonConvert.DeserializeObject<List<User>>(jsonContent);
+                Users = JsonConvert.DeserializeObject<List<User>>(jsonContent);
                 Console.WriteLine($"Succesfully read from: {FilePath}");
-            } 
-            catch (Exception ex) 
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine($"An error has occurd: {ex.Message}");
             }
