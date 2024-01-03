@@ -28,8 +28,8 @@ namespace Student_Housing_BV
 
         private void btnViewTasks_Click(object sender, EventArgs e)
         {
-            TasksListView tasksListView = new();
-            tasksListView.Show();
+            TaskListView taskListView = new(handleUsers, loggedInUser);
+            taskListView.Show();
             this.Close();
         }
 

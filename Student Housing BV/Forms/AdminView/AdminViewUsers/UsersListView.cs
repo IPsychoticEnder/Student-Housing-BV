@@ -17,7 +17,7 @@ namespace Student_Housing_BV.Forms
 
             List<User> users = handleUsers.Users;
             dataGridDisplayAllUsers.DataSource = users;
-            
+
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

@@ -32,11 +32,11 @@
             btnAddUser = new Button();
             btnBackToAdminView = new Button();
             dataGridDisplayAllUsers = new DataGridView();
-            userBindingSource = new BindingSource(components);
-            isAdminDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            userNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             userIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            userNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            isAdminDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
+            userBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllUsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             SuspendLayout();
@@ -85,23 +85,12 @@
             dataGridDisplayAllUsers.TabIndex = 3;
             dataGridDisplayAllUsers.CellDoubleClick += dataGridDisplayAllUsers_CellDoubleClick;
             // 
-            // userBindingSource
+            // userIDDataGridViewTextBoxColumn
             // 
-            userBindingSource.DataSource = typeof(Classes.User);
-            // 
-            // isAdminDataGridViewCheckBoxColumn
-            // 
-            isAdminDataGridViewCheckBoxColumn.DataPropertyName = "IsAdmin";
-            isAdminDataGridViewCheckBoxColumn.HeaderText = "IsAdmin";
-            isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
-            isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            userIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // userNameDataGridViewTextBoxColumn
             // 
@@ -110,12 +99,23 @@
             userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
             userNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // userIDDataGridViewTextBoxColumn
+            // passwordDataGridViewTextBoxColumn
             // 
-            userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
-            userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            userIDDataGridViewTextBoxColumn.ReadOnly = true;
+            passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            passwordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isAdminDataGridViewCheckBoxColumn
+            // 
+            isAdminDataGridViewCheckBoxColumn.DataPropertyName = "IsAdmin";
+            isAdminDataGridViewCheckBoxColumn.HeaderText = "IsAdmin";
+            isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
+            isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // userBindingSource
+            // 
+            userBindingSource.DataSource = typeof(Classes.User);
             // 
             // UsersListView
             // 
