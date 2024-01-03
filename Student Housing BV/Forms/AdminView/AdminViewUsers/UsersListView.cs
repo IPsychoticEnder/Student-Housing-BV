@@ -1,4 +1,4 @@
-﻿using Student_Housing_BV.Classes;
+﻿using Student_Housing_BV.Classes.Users;
 using Student_Housing_BV.Forms.UsersView;
 
 namespace Student_Housing_BV.Forms

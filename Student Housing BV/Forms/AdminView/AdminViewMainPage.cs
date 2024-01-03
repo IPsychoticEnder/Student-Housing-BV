@@ -1,4 +1,4 @@
-using Student_Housing_BV.Classes;
+using Student_Housing_BV.Classes.Users;
 using Student_Housing_BV.Forms;
 using Student_Housing_BV.Forms.AdminView.AdminViewAgreements;
 using Student_Housing_BV.Forms.AdminView.AdminViewTasks;

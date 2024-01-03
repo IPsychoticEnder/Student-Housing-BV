@@ -1,4 +1,6 @@
-﻿namespace Student_Housing_BV.Forms
+﻿using Student_Housing_BV.Classes.Users;
+
+namespace Student_Housing_BV.Forms
 {
     partial class UsersListView
     {
@@ -115,7 +117,7 @@
             // 
             // userBindingSource
             // 
-            userBindingSource.DataSource = typeof(Classes.User);
+            userBindingSource.DataSource = typeof(User);
             // 
             // UsersListView
             // 
