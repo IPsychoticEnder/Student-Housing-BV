@@ -1,6 +1,10 @@
-﻿[
+[
   {
-    "Name": "Clean kitchen",
-    "Description":  "Clean the kitchen motherfucker"
+    "Name": "testing",
+    "Description": "testing the description",
+    "DueDates": {
+      "Monday": false,
+      "Wednesday": false
+    }
   }
 ]
