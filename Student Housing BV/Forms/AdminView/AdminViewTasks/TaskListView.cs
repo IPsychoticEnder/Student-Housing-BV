@@ -13,14 +13,14 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
 
         public TaskListView(HandleUsers handleUsers, User loggedInUser)
         {
+            InitializeComponent();
             HandleUsers = handleUsers;
             LoggedInUser = loggedInUser;
             HandleTasks = new HandleTasks();
+
             Tasks = HandleTasks.Tasks;
+            dataGridDisplayAllTasks.DataSource = Tasks;
 
-
-
-            InitializeComponent();
         }
 
         private void btnBackToAdminView_Click(object sender, EventArgs e)
