@@ -1,7 +1,4 @@
-﻿
-
-using Newtonsoft.Json;
-using Student_Housing_BV.Classes.Agreements;
+﻿using Newtonsoft.Json;
 
 namespace Student_Housing_BV.Classes.Tasks
 {
