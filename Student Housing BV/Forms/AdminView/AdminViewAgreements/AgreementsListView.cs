@@ -6,32 +6,32 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 {
     public partial class AgreementsListView : Form
     {
-        HandleUsers handleUsers;
-        User loggedInUser;
-        HandleAgreements handleAgreements = new();
-        List<Agreement> agreements = new();
+        HandleUsers HandleUsers;
+        User LoggedInUser;
+        HandleAgreements HandleAgreements = new();
+        List<Agreement> Agreements = new();
 
 
         public AgreementsListView(HandleUsers handleUsers, User loggedInUser)
         {
             InitializeComponent();
-            this.handleUsers = handleUsers;
-            this.loggedInUser = loggedInUser;
+            HandleUsers = handleUsers;
+            LoggedInUser = loggedInUser;
 
-            agreements = handleAgreements.Agreements;
-            dataGridDisplayAllAgreements.DataSource = agreements;
+            Agreements = HandleAgreements.Agreements;
+            dataGridDisplayAllAgreements.DataSource = Agreements;
         }
 
         private void btnAddAgreement_Click(object sender, EventArgs e)
         {
-            AddAgreementView addAgreementView = new(handleUsers, loggedInUser, handleAgreements);
+            AddAgreementView addAgreementView = new(HandleUsers, LoggedInUser, HandleAgreements);
             addAgreementView.Show();
             this.Hide();
         }
 
         private void btnBackToAdminView_Click(object sender, EventArgs e)
         {
-            AdminViewMainPage adminViewMainPage = new(handleUsers, loggedInUser);
+            AdminViewMainPage adminViewMainPage = new(HandleUsers, LoggedInUser);
             adminViewMainPage.Show();
             this.Close();
         }
@@ -39,7 +39,7 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
         private void dataGridDisplayAllAgreements_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Agreement selectedAgreement = (Agreement)dataGridDisplayAllAgreements.SelectedRows[0].DataBoundItem;
-            EditAgreementView editAgreementView = new(handleUsers, loggedInUser, handleAgreements,selectedAgreement);
+            EditAgreementView editAgreementView = new(HandleUsers, LoggedInUser, HandleAgreements,selectedAgreement);
             editAgreementView.Show();
             this.Hide();
         }

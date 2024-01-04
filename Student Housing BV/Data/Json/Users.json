@@ -9,7 +9,7 @@
     "UserName": "Destina",
     "UserID": 1,
     "Password": "123",
-    "IsAdmin": true
+    "IsAdmin": false
   },
   {
     "UserName": "Aaron",

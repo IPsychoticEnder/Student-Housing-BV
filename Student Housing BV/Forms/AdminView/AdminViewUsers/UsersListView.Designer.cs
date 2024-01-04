@@ -34,11 +34,11 @@ namespace Student_Housing_BV.Forms
             btnAddUser = new Button();
             btnBackToAdminView = new Button();
             dataGridDisplayAllUsers = new DataGridView();
-            userIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            userBindingSource = new BindingSource(components);
             userNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            userIDDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             passwordDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             isAdminDataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
-            userBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllUsers).BeginInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             SuspendLayout();
@@ -73,7 +73,7 @@ namespace Student_Housing_BV.Forms
             dataGridDisplayAllUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridDisplayAllUsers.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridDisplayAllUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridDisplayAllUsers.Columns.AddRange(new DataGridViewColumn[] { userIDDataGridViewTextBoxColumn, userNameDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, isAdminDataGridViewCheckBoxColumn });
+            dataGridDisplayAllUsers.Columns.AddRange(new DataGridViewColumn[] { userNameDataGridViewTextBoxColumn, userIDDataGridViewTextBoxColumn, passwordDataGridViewTextBoxColumn, isAdminDataGridViewCheckBoxColumn });
             dataGridDisplayAllUsers.DataSource = userBindingSource;
             dataGridDisplayAllUsers.Location = new Point(77, 113);
             dataGridDisplayAllUsers.Margin = new Padding(2, 1, 2, 1);
@@ -87,12 +87,9 @@ namespace Student_Housing_BV.Forms
             dataGridDisplayAllUsers.TabIndex = 3;
             dataGridDisplayAllUsers.CellDoubleClick += dataGridDisplayAllUsers_CellDoubleClick;
             // 
-            // userIDDataGridViewTextBoxColumn
+            // userBindingSource
             // 
-            userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
-            userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            userIDDataGridViewTextBoxColumn.ReadOnly = true;
+            userBindingSource.DataSource = typeof(User);
             // 
             // userNameDataGridViewTextBoxColumn
             // 
@@ -100,6 +97,13 @@ namespace Student_Housing_BV.Forms
             userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
             userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
             userNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            userIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passwordDataGridViewTextBoxColumn
             // 
@@ -114,10 +118,6 @@ namespace Student_Housing_BV.Forms
             isAdminDataGridViewCheckBoxColumn.HeaderText = "IsAdmin";
             isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
             isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // userBindingSource
-            // 
-            userBindingSource.DataSource = typeof(User);
             // 
             // UsersListView
             // 
@@ -142,10 +142,10 @@ namespace Student_Housing_BV.Forms
         private Button btnAddUser;
         private Button btnBackToAdminView;
         private DataGridView dataGridDisplayAllUsers;
-        private BindingSource userBindingSource;
-        private DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn isAdminDataGridViewCheckBoxColumn;
+        private BindingSource userBindingSource;
     }
 }

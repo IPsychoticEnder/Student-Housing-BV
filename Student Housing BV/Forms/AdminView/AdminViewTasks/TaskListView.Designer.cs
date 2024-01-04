@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnBackToAdminView = new Button();
             btnAddTask = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            taskBindingSource = new BindingSource(components);
+            dataGridDisplayAllTasks = new DataGridView();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllTasks).BeginInit();
             SuspendLayout();
             // 
             // btnBackToAdminView
@@ -56,28 +61,59 @@
             btnAddTask.UseVisualStyleBackColor = true;
             btnAddTask.Click += btnAddTask_Click;
             // 
-            // dataGridView1
+            // taskBindingSource
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(77, 113);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(582, 297);
-            dataGridView1.TabIndex = 4;
+            taskBindingSource.DataSource = typeof(Classes.Tasks.Task);
+            // 
+            // dataGridDisplayAllTasks
+            // 
+            dataGridDisplayAllTasks.AllowUserToResizeColumns = false;
+            dataGridDisplayAllTasks.AllowUserToResizeRows = false;
+            dataGridDisplayAllTasks.AutoGenerateColumns = false;
+            dataGridDisplayAllTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridDisplayAllTasks.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridDisplayAllTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridDisplayAllTasks.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn });
+            dataGridDisplayAllTasks.DataSource = taskBindingSource;
+            dataGridDisplayAllTasks.Location = new Point(77, 113);
+            dataGridDisplayAllTasks.Margin = new Padding(2, 1, 2, 1);
+            dataGridDisplayAllTasks.MultiSelect = false;
+            dataGridDisplayAllTasks.Name = "dataGridDisplayAllTasks";
+            dataGridDisplayAllTasks.ReadOnly = true;
+            dataGridDisplayAllTasks.RowHeadersWidth = 82;
+            dataGridDisplayAllTasks.RowTemplate.Height = 41;
+            dataGridDisplayAllTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridDisplayAllTasks.Size = new Size(582, 297);
+            dataGridDisplayAllTasks.TabIndex = 4;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // TaskListView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(740, 435);
+            Controls.Add(dataGridDisplayAllTasks);
             Controls.Add(btnBackToAdminView);
             Controls.Add(btnAddTask);
             Name = "TaskListView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TaskListView";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllTasks).EndInit();
             ResumeLayout(false);
         }
 
@@ -86,5 +122,11 @@
         private Button btnBackToAdminView;
         private Button btnAddTask;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn filePathDataGridViewTextBoxColumn;
+        private BindingSource handleTasksBindingSource;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private BindingSource taskBindingSource;
+        private DataGridView dataGridDisplayAllTasks;
     }
 }
