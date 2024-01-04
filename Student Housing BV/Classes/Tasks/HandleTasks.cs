@@ -22,6 +22,12 @@ namespace Student_Housing_BV.Classes.Tasks
             ReadFromJson();
         }
 
+        public void AddTask(Task newTask)
+        {
+            Tasks.Add(newTask);
+            WriteToJson();
+        }
+
         public void ReadFromJson()
         {
             try
