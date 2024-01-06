@@ -45,59 +45,59 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnLogin);
-            groupBox1.Location = new Point(396, 189);
-            groupBox1.Margin = new Padding(4, 2, 4, 2);
+            groupBox1.Location = new Point(213, 89);
+            groupBox1.Margin = new Padding(2, 1, 2, 1);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 2, 4, 2);
-            groupBox1.Size = new Size(578, 570);
+            groupBox1.Padding = new Padding(2, 1, 2, 1);
+            groupBox1.Size = new Size(311, 267);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Login";
             // 
             // tbLoginUserID
             // 
-            tbLoginUserID.Location = new Point(182, 122);
-            tbLoginUserID.Margin = new Padding(4, 2, 4, 2);
+            tbLoginUserID.Location = new Point(98, 57);
+            tbLoginUserID.Margin = new Padding(2, 1, 2, 1);
             tbLoginUserID.Name = "tbLoginUserID";
-            tbLoginUserID.Size = new Size(281, 39);
+            tbLoginUserID.Size = new Size(153, 23);
             tbLoginUserID.TabIndex = 5;
-            tbLoginUserID.Text = "admin";
+            tbLoginUserID.Text = "Aaron";
             // 
             // tbLoginUserPassword
             // 
-            tbLoginUserPassword.Location = new Point(182, 205);
-            tbLoginUserPassword.Margin = new Padding(4, 2, 4, 2);
+            tbLoginUserPassword.Location = new Point(98, 96);
+            tbLoginUserPassword.Margin = new Padding(2, 1, 2, 1);
             tbLoginUserPassword.Name = "tbLoginUserPassword";
-            tbLoginUserPassword.Size = new Size(281, 39);
+            tbLoginUserPassword.Size = new Size(153, 23);
             tbLoginUserPassword.TabIndex = 4;
-            tbLoginUserPassword.Text = "ADMIN";
+            tbLoginUserPassword.Text = "12345";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(33, 209);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(18, 98);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(116, 32);
+            label2.Size = new Size(60, 15);
             label2.TabIndex = 2;
             label2.Text = "Password:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 124);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(18, 58);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(137, 32);
+            label1.Size = new Size(68, 15);
             label1.TabIndex = 1;
             label1.Text = "User Name:";
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(188, 448);
-            btnLogin.Margin = new Padding(4, 2, 4, 2);
+            btnLogin.Location = new Point(101, 210);
+            btnLogin.Margin = new Padding(2, 1, 2, 1);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(195, 68);
+            btnLogin.Size = new Size(105, 32);
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -105,12 +105,11 @@
             // 
             // LoginView
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(1374, 929);
+            ClientSize = new Size(740, 435);
             Controls.Add(groupBox1);
-            Margin = new Padding(6);
             Name = "LoginView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
