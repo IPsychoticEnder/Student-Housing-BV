@@ -1,11 +1,11 @@
 [
   {
-    "Name": "Dishes",
+    "Name": "Clean Dishes",
     "Description": "Wash dishes\r\nDry dishes\r\nStore dishes",
     "DueDates": {
-      "Monday": false,
-      "Wednesday": false,
-      "Friday": false
+      "Tuesday": false,
+      "Thursday": false,
+      "Saturday": false
     },
     "UserInCharge": {
       "UserName": "Friso",
@@ -13,6 +13,37 @@
       "Password": "1122",
       "IsAdmin": false,
       "DisplayText": "Friso | 2"
+    }
+  },
+  {
+    "Name": "Clean Kitchen",
+    "Description": "Wash the dishes.\r\nDry the dishes off.\r\nStore the dishes in the shelves.",
+    "DueDates": {
+      "Monday": false,
+      "Wednesday": false,
+      "Friday": false
+    },
+    "UserInCharge": {
+      "UserName": "Aaron",
+      "UserID": 1,
+      "Password": "12345",
+      "IsAdmin": false,
+      "DisplayText": "Aaron | 1"
+    }
+  },
+  {
+    "Name": "Clean Trash",
+    "Description": "Take out trash:\r\n-Living room\r\n-Bathroom\r\n-Kitchen",
+    "DueDates": {
+      "Monday": false,
+      "Thursday": false
+    },
+    "UserInCharge": {
+      "UserName": "Aaron",
+      "UserID": 1,
+      "Password": "12345",
+      "IsAdmin": false,
+      "DisplayText": "Aaron | 1"
     }
   }
 ]
