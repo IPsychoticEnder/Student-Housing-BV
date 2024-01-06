@@ -9,6 +9,16 @@ namespace Student_Housing_BV.Classes.Users
 
         public string FilePath { get; private set; }
 
+
+
+        // Expose Users as IEnumerable<User> for binding
+        public IEnumerable<User> UsersEnumerable => Users;
+
+        // Add a property for display in ComboBox
+        public string UserDisplayName => "UserName";
+
+
+
         public HandleUsers()
         {
             Users = new List<User>();

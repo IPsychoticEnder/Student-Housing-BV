@@ -31,12 +31,13 @@
             components = new System.ComponentModel.Container();
             btnBackToAdminView = new Button();
             btnAddTask = new Button();
-            taskBindingSource = new BindingSource(components);
             dataGridDisplayAllTasks = new DataGridView();
+            taskBindingSource = new BindingSource(components);
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)taskBindingSource).BeginInit();
+            dueDatesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllTasks).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource).BeginInit();
             SuspendLayout();
             // 
             // btnBackToAdminView
@@ -61,10 +62,6 @@
             btnAddTask.UseVisualStyleBackColor = true;
             btnAddTask.Click += btnAddTask_Click;
             // 
-            // taskBindingSource
-            // 
-            taskBindingSource.DataSource = typeof(Classes.Tasks.Task);
-            // 
             // dataGridDisplayAllTasks
             // 
             dataGridDisplayAllTasks.AllowUserToResizeColumns = false;
@@ -73,7 +70,7 @@
             dataGridDisplayAllTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridDisplayAllTasks.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridDisplayAllTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridDisplayAllTasks.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn });
+            dataGridDisplayAllTasks.Columns.AddRange(new DataGridViewColumn[] { nameDataGridViewTextBoxColumn, descriptionDataGridViewTextBoxColumn, dueDatesDataGridViewTextBoxColumn });
             dataGridDisplayAllTasks.DataSource = taskBindingSource;
             dataGridDisplayAllTasks.Location = new Point(77, 113);
             dataGridDisplayAllTasks.Margin = new Padding(2, 1, 2, 1);
@@ -85,6 +82,10 @@
             dataGridDisplayAllTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridDisplayAllTasks.Size = new Size(582, 297);
             dataGridDisplayAllTasks.TabIndex = 4;
+            // 
+            // taskBindingSource
+            // 
+            taskBindingSource.DataSource = typeof(Classes.Tasks.Task);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -100,6 +101,13 @@
             descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // dueDatesDataGridViewTextBoxColumn
+            // 
+            dueDatesDataGridViewTextBoxColumn.DataPropertyName = "DueDates";
+            dueDatesDataGridViewTextBoxColumn.HeaderText = "DueDates";
+            dueDatesDataGridViewTextBoxColumn.Name = "dueDatesDataGridViewTextBoxColumn";
+            dueDatesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // TaskListView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -112,8 +120,8 @@
             Name = "TaskListView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TaskListView";
-            ((System.ComponentModel.ISupportInitialize)taskBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllTasks).EndInit();
+            ((System.ComponentModel.ISupportInitialize)taskBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -124,9 +132,10 @@
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn filePathDataGridViewTextBoxColumn;
         private BindingSource handleTasksBindingSource;
+        private DataGridView dataGridDisplayAllTasks;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dueDatesDataGridViewTextBoxColumn;
         private BindingSource taskBindingSource;
-        private DataGridView dataGridDisplayAllTasks;
     }
 }

@@ -1,17 +1,16 @@
 [
   {
-    "Name": "testing",
-    "Description": "testing the description",
+    "Name": "Wash Dishes",
+    "Description": "Wash all the dishes and dry them off",
     "DueDates": {
       "Monday": false,
-      "Wednesday": false
+      "Thursday": false
     }
   },
   {
-    "Name": "testing",
-    "Description": "testing the description",
+    "Name": "Clean the dining room",
+    "Description": "Mop and vacuum the dining room",
     "DueDates": {
-      "Monday": false,
       "Wednesday": false
     }
   }

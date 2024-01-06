@@ -32,15 +32,9 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
-
-            Dictionary<string, bool> DueDate = new Dictionary<string, bool>
-            {
-                { "Monday", false },
-                { "Wednesday", false}
-            };
-
-            Classes.Tasks.Task newtask = new("testing", "testing the description", DueDate);
-            HandleTasks.AddTask(newtask);
+            AddTaskView Addtaskview = new(HandleUsers, LoggedInUser);
+            Addtaskview.Show();
+            this.Hide();
         }
     }
 }
