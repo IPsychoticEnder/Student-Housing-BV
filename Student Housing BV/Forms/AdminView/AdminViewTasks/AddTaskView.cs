@@ -16,9 +16,11 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
 
             HandleUsers = handleUsers;
             LoggedInUser = loggedInUser;
+            
 
-            cmboxSelectUser.DataSource = handleUsers.UsersEnumerable;
-            cmboxSelectUser.DisplayMember = handleUsers.UserDisplayName;
+            List<User> nonAdminUsers = handleUsers.Users.Where(user => !user.IsAdmin).ToList();
+            cmboxSelectUser.DataSource = nonAdminUsers;
+            cmboxSelectUser.DisplayMember = "UserName";
         }
 
         private void btnAddTask_Click(object sender, EventArgs e)
@@ -53,8 +55,9 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
                 Duedates.Add("Saturday", false);
             }
 
-            Classes.Tasks.Task newTask = new(TaskName, TaskDescription, Duedates);
+            User selectedUser = (User)cmboxSelectUser.SelectedValue;
 
+            Classes.Tasks.Task newTask = new(TaskName, TaskDescription, Duedates, selectedUser);
             HandleTasks.AddTask(newTask);
 
             TaskListView TaskListView = new(HandleUsers, LoggedInUser);
