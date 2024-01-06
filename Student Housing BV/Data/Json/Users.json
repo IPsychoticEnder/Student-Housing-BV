@@ -3,18 +3,28 @@
     "UserName": "admin",
     "UserID": 0,
     "Password": "ADMIN",
-    "IsAdmin": true
-  },
-  {
-    "UserName": "Destina",
-    "UserID": 1,
-    "Password": "123",
-    "IsAdmin": false
+    "IsAdmin": true,
+    "DisplayText": "admin | 0"
   },
   {
     "UserName": "Aaron",
+    "UserID": 1,
+    "Password": "12345",
+    "IsAdmin": false,
+    "DisplayText": "Aaron | 1"
+  },
+  {
+    "UserName": "Friso",
     "UserID": 2,
-    "Password": "123",
-    "IsAdmin": false
+    "Password": "1122",
+    "IsAdmin": false,
+    "DisplayText": "Friso | 2"
+  },
+  {
+    "UserName": "Destina",
+    "UserID": 3,
+    "Password": "222",
+    "IsAdmin": false,
+    "DisplayText": "Destina | 3"
   }
 ]

@@ -47,59 +47,53 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(btnDeleteAgreement);
             groupBox1.Controls.Add(btnSaveAgreement);
-            groupBox1.Location = new Point(202, 123);
-            groupBox1.Margin = new Padding(6);
+            groupBox1.Location = new Point(109, 58);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(6);
-            groupBox1.Size = new Size(971, 683);
+            groupBox1.Size = new Size(523, 320);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Edit agreement";
             // 
             // tbAgreementDescription
             // 
-            tbAgreementDescription.Location = new Point(468, 224);
-            tbAgreementDescription.Margin = new Padding(6);
+            tbAgreementDescription.Location = new Point(252, 105);
             tbAgreementDescription.Multiline = true;
             tbAgreementDescription.Name = "tbAgreementDescription";
-            tbAgreementDescription.Size = new Size(335, 258);
+            tbAgreementDescription.Size = new Size(182, 123);
             tbAgreementDescription.TabIndex = 15;
             // 
             // tbAgreementTitle
             // 
-            tbAgreementTitle.Location = new Point(468, 124);
-            tbAgreementTitle.Margin = new Padding(6);
+            tbAgreementTitle.Location = new Point(252, 58);
             tbAgreementTitle.Name = "tbAgreementTitle";
-            tbAgreementTitle.Size = new Size(335, 39);
+            tbAgreementTitle.Size = new Size(182, 23);
             tbAgreementTitle.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(181, 233);
-            label2.Margin = new Padding(6, 0, 6, 0);
+            label2.Location = new Point(97, 109);
             label2.Name = "label2";
-            label2.Size = new Size(140, 32);
+            label2.Size = new Size(70, 15);
             label2.TabIndex = 13;
             label2.Text = "Description:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(181, 133);
-            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.Location = new Point(97, 62);
             label1.Name = "label1";
-            label1.Size = new Size(65, 32);
+            label1.Size = new Size(32, 15);
             label1.TabIndex = 12;
             label1.Text = "Title:";
             // 
             // btnDeleteAgreement
             // 
             btnDeleteAgreement.BackColor = Color.FromArgb(255, 192, 192);
-            btnDeleteAgreement.Location = new Point(108, 542);
-            btnDeleteAgreement.Margin = new Padding(4, 2, 4, 2);
+            btnDeleteAgreement.Location = new Point(58, 254);
+            btnDeleteAgreement.Margin = new Padding(2, 1, 2, 1);
             btnDeleteAgreement.Name = "btnDeleteAgreement";
-            btnDeleteAgreement.Size = new Size(269, 62);
+            btnDeleteAgreement.Size = new Size(145, 29);
             btnDeleteAgreement.TabIndex = 11;
             btnDeleteAgreement.Text = "Delete";
             btnDeleteAgreement.UseVisualStyleBackColor = false;
@@ -108,10 +102,10 @@
             // btnSaveAgreement
             // 
             btnSaveAgreement.BackColor = Color.FromArgb(192, 255, 192);
-            btnSaveAgreement.Location = new Point(592, 542);
-            btnSaveAgreement.Margin = new Padding(4, 2, 4, 2);
+            btnSaveAgreement.Location = new Point(319, 254);
+            btnSaveAgreement.Margin = new Padding(2, 1, 2, 1);
             btnSaveAgreement.Name = "btnSaveAgreement";
-            btnSaveAgreement.Size = new Size(269, 62);
+            btnSaveAgreement.Size = new Size(145, 29);
             btnSaveAgreement.TabIndex = 10;
             btnSaveAgreement.Text = "Save Agreement";
             btnSaveAgreement.UseVisualStyleBackColor = false;
@@ -119,12 +113,14 @@
             // 
             // EditAgreementView
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(1374, 929);
+            ClientSize = new Size(740, 435);
             Controls.Add(groupBox1);
+            Margin = new Padding(2, 1, 2, 1);
             Name = "EditAgreementView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditAgreementView";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

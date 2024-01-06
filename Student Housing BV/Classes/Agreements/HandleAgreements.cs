@@ -34,19 +34,13 @@ namespace Student_Housing_BV.Classes.Agreements
 
         public void EditAgreement(Agreement oldAgreement, Agreement newAgreement)
         {
-            if (Agreements.Contains(oldAgreement))
-            {
-                Agreements[Agreements.IndexOf(oldAgreement)] = newAgreement;
-            }
+            Agreements[Agreements.IndexOf(oldAgreement)] = newAgreement;
             WriteToJson();
         }
 
         public void RemoveAgreement(Agreement removeAgreement)
         {
-            if (Agreements.Contains(removeAgreement))
-            {
-                Agreements.Remove(removeAgreement);
-            }
+            Agreements.Remove(removeAgreement);
             WriteToJson();
         }
 
