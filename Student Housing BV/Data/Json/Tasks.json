@@ -1,17 +1,3 @@
 [
-  {
-    "Name": "Wash Dishes",
-    "Description": "Wash all the dishes and dry them off",
-    "DueDates": {
-      "Monday": false,
-      "Thursday": false
-    }
-  },
-  {
-    "Name": "Clean the dining room",
-    "Description": "Mop and vacuum the dining room",
-    "DueDates": {
-      "Wednesday": false
-    }
-  }
+
 ]
