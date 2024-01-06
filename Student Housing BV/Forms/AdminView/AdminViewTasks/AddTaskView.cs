@@ -21,6 +21,7 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
             List<User> nonAdminUsers = handleUsers.Users.Where(user => !user.IsAdmin).ToList();
             cmboxSelectUser.DataSource = nonAdminUsers;
             cmboxSelectUser.DisplayMember = "UserName";
+            cmboxSelectUser.SelectedItem = null;
         }
 
         private void btnAddTask_Click(object sender, EventArgs e)

@@ -32,10 +32,10 @@
             btnBackToAdminView = new Button();
             btnAddTask = new Button();
             dataGridDisplayAllTasks = new DataGridView();
-            taskBindingSource = new BindingSource(components);
             nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dueDatesDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            taskBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllTasks).BeginInit();
             ((System.ComponentModel.ISupportInitialize)taskBindingSource).BeginInit();
             SuspendLayout();
@@ -82,10 +82,7 @@
             dataGridDisplayAllTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridDisplayAllTasks.Size = new Size(582, 297);
             dataGridDisplayAllTasks.TabIndex = 4;
-            // 
-            // taskBindingSource
-            // 
-            taskBindingSource.DataSource = typeof(Classes.Tasks.Task);
+            dataGridDisplayAllTasks.CellDoubleClick += dataGridDisplayAllTasks_CellDoubleClick;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -107,6 +104,10 @@
             dueDatesDataGridViewTextBoxColumn.HeaderText = "DueDates";
             dueDatesDataGridViewTextBoxColumn.Name = "dueDatesDataGridViewTextBoxColumn";
             dueDatesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // taskBindingSource
+            // 
+            taskBindingSource.DataSource = typeof(Classes.Tasks.Task);
             // 
             // TaskListView
             // 

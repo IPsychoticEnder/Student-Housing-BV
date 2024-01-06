@@ -28,6 +28,18 @@ namespace Student_Housing_BV.Classes.Tasks
             WriteToJson();
         }
 
+        public void EditTask(Task oldTask, Task newTask)
+        {
+            Tasks[Tasks.IndexOf(oldTask)] = newTask;
+            WriteToJson();
+        }
+
+        public void RemoveTask(Task removeTask)
+        {
+            Tasks.Remove(removeTask);
+            WriteToJson();
+        }
+
         public void ReadFromJson()
         {
             try

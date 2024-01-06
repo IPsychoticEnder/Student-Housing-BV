@@ -1,3 +1,18 @@
 [
-
+  {
+    "Name": "Dishes",
+    "Description": "Wash dishes\r\nDry dishes\r\nStore dishes",
+    "DueDates": {
+      "Monday": false,
+      "Wednesday": false,
+      "Friday": false
+    },
+    "UserInCharge": {
+      "UserName": "Friso",
+      "UserID": 2,
+      "Password": "1122",
+      "IsAdmin": false,
+      "DisplayText": "Friso | 2"
+    }
+  }
 ]

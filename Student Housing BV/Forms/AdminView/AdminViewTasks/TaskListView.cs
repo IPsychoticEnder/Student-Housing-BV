@@ -36,5 +36,13 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
             Addtaskview.Show();
             this.Hide();
         }
+
+        private void dataGridDisplayAllTasks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Classes.Tasks.Task SelectedTask = (Classes.Tasks.Task)dataGridDisplayAllTasks.SelectedRows[0].DataBoundItem;
+            EditTaskView EditTaskView = new(SelectedTask, HandleUsers, HandleTasks, LoggedInUser);
+            EditTaskView.Show();
+            this.Hide();
+        }
     }
 }

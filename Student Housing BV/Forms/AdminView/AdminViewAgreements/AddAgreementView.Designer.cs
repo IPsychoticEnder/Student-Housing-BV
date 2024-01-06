@@ -117,6 +117,7 @@
             ClientSize = new Size(740, 435);
             Controls.Add(groupBox1);
             Name = "AddAgreementView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddAgreementView";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
