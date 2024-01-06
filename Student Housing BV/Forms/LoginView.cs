@@ -30,7 +30,7 @@ namespace Student_Housing_BV
                 }
                 else
                 {
-                    StudentView studentView = new(validatedUser);
+                    StudentViewMainPage studentView = new(validatedUser);
                     studentView.Show();
                     this.Hide();
                 }
