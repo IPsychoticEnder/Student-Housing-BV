@@ -1,7 +1,7 @@
 [
   {
     "Name": "Clean Dishes",
-    "Description": "Wash dishes\r\nDry dishes\r\nStore dishes",
+    "Description": "-Wash dishes\r\n-Dry dishes\r\n-Store dishes",
     "DueDates": {
       "Tuesday": false,
       "Thursday": false,
@@ -17,7 +17,7 @@
   },
   {
     "Name": "Clean Kitchen",
-    "Description": "Wash the dishes.\r\nDry the dishes off.\r\nStore the dishes in the shelves.",
+    "Description": "-Wash the dishes.\r\n-Dry the dishes off.\r\n-Store the dishes in the shelves.",
     "DueDates": {
       "Monday": false,
       "Wednesday": false,
@@ -33,7 +33,7 @@
   },
   {
     "Name": "Clean Trash",
-    "Description": "Take out trash:\r\n-Living room\r\n-Bathroom\r\n-Kitchen",
+    "Description": "-Living room\r\n-Bathroom\r\n-Kitchen",
     "DueDates": {
       "Monday": false,
       "Thursday": false
