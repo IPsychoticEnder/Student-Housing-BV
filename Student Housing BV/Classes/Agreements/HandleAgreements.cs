@@ -13,6 +13,10 @@ namespace Student_Housing_BV.Classes.Agreements
         {
             Agreements = new List<Agreement>();
 
+            /*This piece of code grabs the source of the file, goes back untill it reaches where all the folders 
+             are saved i.e Student Housing BV.
+
+             Once it finds the right file it routes to the Agreements.json file.*/
             string relativeFilepath = "\\Data\\Json\\Agreements.json";
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             while (!currentDirectory.EndsWith("\\Student Housing BV"))
@@ -24,6 +28,8 @@ namespace Student_Housing_BV.Classes.Agreements
             ReadFromJson();
         }
 
+
+        /*Method to add a new Agreement to the agreements list.*/
         public void AddAgreement(string Title, string Description)
         {
             Agreement newAgreement = new(Title, Description);
