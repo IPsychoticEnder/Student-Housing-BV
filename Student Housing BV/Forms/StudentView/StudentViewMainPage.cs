@@ -46,41 +46,66 @@ namespace Student_Housing_BV
         {
             ChangeButtonsToDefault();
             btnRouteToTuesday.BackColor = Color.FromArgb(134, 97, 193);
+
+            UC_StudentTuesdayView uc = new(LoggedInUser);
+            AdduserControl(uc);
         }
 
         private void btnRouteToWednesday_Click(object sender, EventArgs e)
         {
             ChangeButtonsToDefault();
             btnRouteToWednesday.BackColor = Color.FromArgb(134, 97, 193);
+
+            UC_StudentWednesdayView uc = new(LoggedInUser);
+            AdduserControl(uc);
         }
 
         private void btnRouteToThursday_Click(object sender, EventArgs e)
         {
             ChangeButtonsToDefault();
             btnRouteToThursday.BackColor = Color.FromArgb(134, 97, 193);
+
+            UC_StudentThursdayView uc = new(LoggedInUser);
+            AdduserControl(uc);
         }
 
         private void btnRouteToFriday_Click(object sender, EventArgs e)
         {
             ChangeButtonsToDefault();
             btnRouteToFriday.BackColor = Color.FromArgb(134, 97, 193);
+
+            UC_StudentFridayView uc = new(LoggedInUser);
+            AdduserControl(uc);
         }
 
         private void btnRouteToSaturday_Click(object sender, EventArgs e)
         {
             ChangeButtonsToDefault();
             btnRouteToSaturday.BackColor = Color.FromArgb(134, 97, 193);
+
+            UC_StudentSaturdayView uc = new(LoggedInUser);
+            AdduserControl(uc);
         }
 
         private void btnRouteToSunday_Click(object sender, EventArgs e)
         {
             ChangeButtonsToDefault();
             btnRouteToSunday.BackColor = Color.FromArgb(134, 97, 193);
+
+            UC_StudentSundayView uc = new(LoggedInUser);
+            AdduserControl(uc);
         }
 
         private void btnExitProgram_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoginView loginView = new();
+            loginView.Show();
+            this.Close();
         }
     }
 }
