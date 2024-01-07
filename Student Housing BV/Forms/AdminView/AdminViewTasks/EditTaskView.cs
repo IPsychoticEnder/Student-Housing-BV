@@ -18,11 +18,17 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
             LoggedInUser = loggedInUser;
             SelectedTask = selectedTask;
 
+            //Populates the form with the existing content of the Task which is being edited.
             tbTaskTitle.Text = selectedTask.Name;
             tbTaskDescription.Text = selectedTask.Description;
 
+            //Creates an empty dictionary that will hold the days the task has to be done
             Dictionary<string, bool> DueDates = SelectedTask.DueDates;
 
+            /*Checks each checkbox wether or not its checked then adds the corresponding day to the dictionary
+             
+            This dictionary contains of a key: the day, and a value: true/false.
+            Using the correlation between the key and value we are able to set the "isDone" for that day to true if the task was completed.*/
             foreach (var dueDate in DueDates)
             {
                 if(dueDate.Key == "Monday")
@@ -51,12 +57,21 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
                 }
             }
 
+            /*Makes a list of users that do not have admin access (in theory the owner wouldnt be washing dishes there)
+
+            Data binds the new list of users to the combobox.
+            Sets the DisplayMember of the combobox (What is shown on the dropdown) to "DisplayText" which can be changed to display
+            something different in the User class 
+            (public string DisplayText => $"{UserName} | {UserID}";) This can be changed to display something else i.e Username and paswoord*/
             List<User> nonAdminUsers = HandleUsers.Users.Where(user => !user.IsAdmin).ToList();
             cmboxSelectUser.DataSource = nonAdminUsers;
             cmboxSelectUser.DisplayMember = "DisplayText";
 
+            /*This goes through the nonAdminUsers list and crosschecks it with the selectedTask.UserInCharge.UserID to find the user of the
+             task which is selected.
+            
+             Each user has a unique UserID so it cross reffrences that.*/
             User userToSelect = nonAdminUsers.FirstOrDefault(user => user.UserID == selectedTask.UserInCharge.UserID);
-
             if (userToSelect != null)
             {
                 cmboxSelectUser.SelectedItem = userToSelect;
@@ -69,6 +84,7 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
 
         private void btnSaveTask_Click(object sender, EventArgs e)
         {
+            //Saves the Edited data to a newTask then send it through the HandleTasks class to make the edit.
             string NewTitle = tbTaskTitle.Text;
             string NewDescription = tbTaskDescription.Text;
 
@@ -110,6 +126,8 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewTasks
 
         private void btnDeleteTask_Click(object sender, EventArgs e)
         {
+            //Deletes the Task completely
+            //Maybe add some extra validation i.e "Are you sure you want to delete this Task?"
             HandleTasks.RemoveTask(SelectedTask);
 
             TaskListView TaskListView = new(HandleUsers, LoggedInUser);

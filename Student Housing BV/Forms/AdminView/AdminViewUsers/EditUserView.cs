@@ -4,19 +4,18 @@ namespace Student_Housing_BV.Forms.UsersView
 {
     public partial class EditUserView : Form
     {
-        HandleUsers handleUsers;
-        User loggedInUser;
-        List<User> users;
-        User selectedUser;
+        HandleUsers HandleUsers;
+        User LoggedInUsers;
+        User SelectedUser;
 
         public EditUserView(HandleUsers handleUsers, User loggedInUser, User selectedUser)
         {
             InitializeComponent();
-            this.handleUsers = handleUsers;
-            this.loggedInUser = loggedInUser;
-            this.users = handleUsers.Users;
-            this.selectedUser = selectedUser;
+            HandleUsers = handleUsers;
+            LoggedInUsers = loggedInUser;
+            SelectedUser = selectedUser;
 
+            //Populates the form with the existing content of the user which is being edited.
             tbEditUserUserName.Text = selectedUser.UserName;
             tbEditUserUserID.Text = Convert.ToString(selectedUser.UserID);
             tbEditUserUserPassword.Text = selectedUser.Password;
@@ -25,23 +24,26 @@ namespace Student_Housing_BV.Forms.UsersView
 
         private void btnEditUser_Click(object sender, EventArgs e)
         {
+            //Creates a newUser with the new information entered by the admin, then calls uppon HandleUsers to Edit the User.
             string newUserName = tbEditUserUserName.Text;
             int newUserID = Convert.ToInt16(tbEditUserUserID.Text);
             string newUserPassword = tbEditUserUserPassword.Text;
             bool newIsAdmin = cbEditUserUserAdminAccess.Checked;
 
-            User newEditedUser = new User(newUserName, newUserID, newUserPassword, newIsAdmin);
-            handleUsers.EditUser(newEditedUser);
+            User newUser = new User(newUserName, newUserID, newUserPassword, newIsAdmin);
+            HandleUsers.EditUser(SelectedUser, newUser);
 
-            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
+            UsersListView usersListView = new UsersListView(HandleUsers, LoggedInUsers);
             usersListView.Show();
             this.Close();
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            handleUsers.RemoveUser(selectedUser);
-            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
+            //Calls uppon HandleUsers to delete the user which is being edited.
+            //Maybe add some extra validation i.e "Are you sure you want to delete this user?"
+            HandleUsers.RemoveUser(SelectedUser);
+            UsersListView usersListView = new UsersListView(HandleUsers, LoggedInUsers);
             usersListView.Show();
             this.Close();
         }

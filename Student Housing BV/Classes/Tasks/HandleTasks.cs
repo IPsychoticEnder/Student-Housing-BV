@@ -11,6 +11,11 @@ namespace Student_Housing_BV.Classes.Tasks
         public HandleTasks() 
         {
             Tasks = new List<Task>();
+
+            /*This piece of code grabs the source of the file, goes back untill it reaches where all the folders 
+             are saved i.e Student Housing BV.
+
+             Once it finds the right file it routes to the Tasks.json file.*/
             string relativeFilepath = "\\Data\\Json\\Tasks.json";
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             while (!currentDirectory.EndsWith("\\Student Housing BV"))
@@ -22,24 +27,28 @@ namespace Student_Housing_BV.Classes.Tasks
             ReadFromJson();
         }
 
+        //Method to add new task to the Tasks list
         public void AddTask(Task newTask)
         {
             Tasks.Add(newTask);
             WriteToJson();
         }
 
+        //method to edit an exitsing tast in the Tasks list
         public void EditTask(Task oldTask, Task newTask)
         {
             Tasks[Tasks.IndexOf(oldTask)] = newTask;
             WriteToJson();
         }
 
+        //method to remove a task completely from the list
         public void RemoveTask(Task removeTask)
         {
             Tasks.Remove(removeTask);
             WriteToJson();
         }
 
+        //reads the json file and saves in in the Tasks list
         public void ReadFromJson()
         {
             try
@@ -55,6 +64,7 @@ namespace Student_Housing_BV.Classes.Tasks
             }
         }
 
+        //stores the tasks list in a json file
         public void WriteToJson()
         {
             try

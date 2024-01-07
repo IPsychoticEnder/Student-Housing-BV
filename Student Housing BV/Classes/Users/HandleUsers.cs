@@ -13,6 +13,10 @@ namespace Student_Housing_BV.Classes.Users
         {
             Users = new List<User>();
 
+            /*This piece of code grabs the source of the file, goes back untill it reaches where all the folders 
+             are saved i.e Student Housing BV.
+
+             Once it finds the right file it routes to the Users.json file.*/
             string relativeFilepath = "\\Data\\Json\\Users.json";
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
             while (!currentDirectory.EndsWith("\\Student Housing BV"))
@@ -24,6 +28,7 @@ namespace Student_Housing_BV.Classes.Users
             ReadFromJson();
         }
 
+        //Method to add a user to the Users list. This method also generates a new UserID for each new user.
         public void AddUser(string userName, string password, bool isAdmin)
         {
             int userID = Users.Last().UserID + 1;
@@ -32,6 +37,7 @@ namespace Student_Housing_BV.Classes.Users
             WriteToJson();
         }
 
+        //Method to remove a user from the list
         public void RemoveUser(User toBeRemvedUser)
         {
             if (toBeRemvedUser.UserID == 0)
@@ -48,27 +54,22 @@ namespace Student_Housing_BV.Classes.Users
             WriteToJson();
         }
 
-        public void EditUser(User editedUser)
+        //method to edit an existing user in the list
+        public void EditUser(User newUser, User oldUser)
         {
-            if (editedUser.UserID == 0)
+            //this checks if the user has an UserId of 0 (The admin) and if true that that user cannot be edited or deleted
+            if (newUser.UserID == 0)
             {
                 MessageBox.Show("This user cannot be edited");
             }
             else
             {
-                foreach (User user in Users)
-                {
-                    if (user.UserID == editedUser.UserID)
-                    {
-                        user.UserName = editedUser.UserName;
-                        user.Password = editedUser.Password;
-                        user.IsAdmin = editedUser.IsAdmin;
-                    }
-                }
+                Users[Users.IndexOf(oldUser)] = newUser;
+                WriteToJson();
             }
-            WriteToJson();
         }
 
+        //Method to validate users for the login process. if the user was found it returns the user else returns null
         public User? ValidateUser(User toBeValidatedUser)
         {
             foreach (User user in Users)
@@ -81,6 +82,7 @@ namespace Student_Housing_BV.Classes.Users
             return null;
         }
 
+        //Writes all the users in the list to a json file
         public void WriteToJson()
         {
             try
@@ -95,6 +97,7 @@ namespace Student_Housing_BV.Classes.Users
             }
         }
 
+        //reads all the users in the json file and saved it to the list
         public void ReadFromJson()
         {
             try
