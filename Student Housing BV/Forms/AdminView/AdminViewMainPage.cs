@@ -7,42 +7,50 @@ namespace Student_Housing_BV
 {
     public partial class AdminViewMainPage : Form
     {
-        HandleUsers handleUsers;
-        User loggedInUser;
+        HandleUsers HandleUsers;
+        User LoggedInUser;
 
 
         public AdminViewMainPage(HandleUsers users, User loggedInUser)
         {
             InitializeComponent();
-            this.loggedInUser = loggedInUser;
-            this.handleUsers = users;
-            lbWelcomeUser.Text = $"Welcome {this.loggedInUser.UserName}";
+            LoggedInUser = loggedInUser;
+            HandleUsers = users;
+            lbWelcomeUser.Text = $"Welcome {this.LoggedInUser.UserName}";
         }
 
         private void btnViewUsers_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new(handleUsers, loggedInUser);
-            usersListView.Show();
-            this.Hide();
+            /*Routes the user to the UserListView passing through HandleUsers and LoggedInUser similar to a varable
+             being passed through a constructor in a class*/
+            UsersListView UserListView = new(HandleUsers, LoggedInUser);
+            UserListView.Show();
+            this.Close();
         }
 
         private void btnViewTasks_Click(object sender, EventArgs e)
         {
-            TaskListView taskListView = new(handleUsers, loggedInUser);
-            taskListView.Show();
+            /*Routes the user to the TaskListView passing through HandleUsers and LoggedInUser similar to a varable
+             being passed through a constructor in a class*/
+            TaskListView TaskListView = new(HandleUsers, LoggedInUser);
+            TaskListView.Show();
             this.Close();
         }
 
         private void btnViewAgreements_Click(object sender, EventArgs e)
         {
-            AgreementsListView agreementsListView = new(handleUsers, loggedInUser);
-            agreementsListView.Show();
+            /*Routes the user to the AgreementListView passing through HandleUsers and LoggedInUser similar to a varable
+             being passed through a constructor in a class*/
+            AgreementsListView AgreementsListView = new(HandleUsers, LoggedInUser);
+            AgreementsListView.Show();
             this.Close();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            LoginView loginView = new LoginView();
+            /*Routed the user back to the LoginView signing them out.
+             LoginView does not require any variables to work, therefor nothing is passed through.*/
+            LoginView loginView = new();
             loginView.Show();
             this.Close();
         }

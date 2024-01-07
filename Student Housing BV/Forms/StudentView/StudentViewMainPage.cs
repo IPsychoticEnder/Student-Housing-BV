@@ -10,7 +10,7 @@ namespace Student_Housing_BV
         public StudentViewMainPage(User loggedInUser)
         {
             InitializeComponent();
-            this.LoggedInUser = loggedInUser;
+            LoggedInUser = loggedInUser;
             lblDisplayStudentName.Text = $"{loggedInUser.UserName}";
         }
 
@@ -101,7 +101,7 @@ namespace Student_Housing_BV
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
             LoginView loginView = new();
             loginView.Show();

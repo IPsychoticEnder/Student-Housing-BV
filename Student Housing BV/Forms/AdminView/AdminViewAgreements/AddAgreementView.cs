@@ -24,7 +24,9 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             string Title = tbNewAgreementTitle.Text;
             string Description = tbNewAgreementDescription.Text;
 
-            HandleAgreements.AddAgreement(Title, Description);
+            Agreement newAgreement = new(Title, Description);
+
+            HandleAgreements.AddAgreement(newAgreement);
 
             AgreementsListView agreementsListView = new(HandleUsers, LoggedInUser);
             agreementsListView.Show();

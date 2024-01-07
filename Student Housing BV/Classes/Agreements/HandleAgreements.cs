@@ -29,27 +29,28 @@ namespace Student_Housing_BV.Classes.Agreements
         }
 
 
-        /*Method to add a new Agreement to the agreements list.*/
-        public void AddAgreement(string Title, string Description)
+        //Method to add a new Agreement to the agreements list.
+        public void AddAgreement(Agreement newAgreement)
         {
-            Agreement newAgreement = new(Title, Description);
-
             Agreements.Add(newAgreement);
             WriteToJson();
         }
 
+        //Edits an existing agreement with the info of the new one
         public void EditAgreement(Agreement oldAgreement, Agreement newAgreement)
         {
             Agreements[Agreements.IndexOf(oldAgreement)] = newAgreement;
             WriteToJson();
         }
 
+        //removes an agreement from the list
         public void RemoveAgreement(Agreement removeAgreement)
         {
             Agreements.Remove(removeAgreement);
             WriteToJson();
         }
 
+        //Reads the json file and stores all of its contents in the List<Agreement> Agreements
         public void ReadFromJson()
         {
             try
@@ -65,6 +66,7 @@ namespace Student_Housing_BV.Classes.Agreements
             }
         }
 
+        //Writes all of the Agreements in the List<Agreement> to a .json file
         public void WriteToJson()
         {
             try

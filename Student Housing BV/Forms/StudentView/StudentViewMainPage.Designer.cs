@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
+            btnLogOut = new Button();
             btnExitProgram = new Button();
             lblDisplayStudentName = new Label();
             lblTitleOfProduct = new Label();
@@ -49,7 +49,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(46, 41, 78);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnLogOut);
             panel1.Controls.Add(btnExitProgram);
             panel1.Controls.Add(lblDisplayStudentName);
             panel1.Controls.Add(lblTitleOfProduct);
@@ -59,20 +59,20 @@
             panel1.Size = new Size(860, 59);
             panel1.TabIndex = 2;
             // 
-            // button1
+            // btnLogOut
             // 
-            button1.BackColor = Color.FromArgb(224, 224, 224);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(723, 17);
-            button1.Name = "button1";
-            button1.Size = new Size(69, 24);
-            button1.TabIndex = 5;
-            button1.Text = "Log Out";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnLogOut.BackColor = Color.FromArgb(224, 224, 224);
+            btnLogOut.Cursor = Cursors.Hand;
+            btnLogOut.FlatStyle = FlatStyle.Flat;
+            btnLogOut.Font = new Font("Century", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogOut.ForeColor = Color.Black;
+            btnLogOut.Location = new Point(723, 17);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(69, 24);
+            btnLogOut.TabIndex = 5;
+            btnLogOut.Text = "Log Out";
+            btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnExitProgram
             // 
@@ -274,6 +274,6 @@
         private Button btnRouteToWednesday;
         private Button btnRouteToTuesday;
         private Button btnExitProgram;
-        private Button button1;
+        private Button btnLogOut;
     }
 }

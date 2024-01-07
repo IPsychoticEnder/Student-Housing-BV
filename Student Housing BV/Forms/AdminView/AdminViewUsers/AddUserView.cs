@@ -5,27 +5,32 @@ namespace Student_Housing_BV.Forms
 {
     public partial class AddUserView : Form
     {
-        HandleUsers handleUsers;
-        User loggedInUser;
+        HandleUsers HandleUsers;
+        User LoggedInUser;
 
         public AddUserView(HandleUsers handleUsers, User loggedInUser)
         {
             InitializeComponent();
-            this.handleUsers = handleUsers;
-            this.loggedInUser = loggedInUser;
+            HandleUsers = handleUsers;
+            LoggedInUser = loggedInUser;
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
+            //Double checks if both baswoords are the same.
             if (tbAddUserUserPassword.Text == tbAddUserCheckUserPassword.Text)
             {
+                /*This takes the user input from the form and sends it to the HandleUsers class in which a new
+                 user will be created.
+                
+                 the userID will be generated in the HandleUser class instead of here.*/
                 string userName = tbAddUserUserName.Text;
                 string password = tbAddUserUserPassword.Text;
                 bool isAdmin = cbAddUserUserAdminAccess.Checked;
 
-                handleUsers.AddUser(userName, password, isAdmin);
+                HandleUsers.AddUser(userName, password, isAdmin);
 
-                UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
+                UsersListView usersListView = new UsersListView(HandleUsers, LoggedInUser);
                 usersListView.Show();
                 this.Close();
             }
@@ -37,7 +42,8 @@ namespace Student_Housing_BV.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            UsersListView usersListView = new UsersListView(handleUsers, loggedInUser);
+            //Returns back to the previous form without adding a user
+            UsersListView usersListView = new UsersListView(HandleUsers, LoggedInUser);
             usersListView.Show();
             this.Close();
         }
