@@ -55,7 +55,7 @@ namespace Student_Housing_BV.Classes.Users
         }
 
         //method to edit an existing user in the list
-        public void EditUser(User newUser, User oldUser)
+        public void EditUser(User oldUser, User newUser)
         {
             //this checks if the user has an UserId of 0 (The admin) and if true that that user cannot be edited or deleted
             if (newUser.UserID == 0)

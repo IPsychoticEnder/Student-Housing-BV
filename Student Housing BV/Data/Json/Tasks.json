@@ -8,52 +8,6 @@
       "Saturday": false
     },
     "UserInCharge": {
-      "UserName": "Friso",
-      "UserID": 2,
-      "Password": "1122",
-      "IsAdmin": false,
-      "DisplayText": "Friso | 2"
-    }
-  },
-  {
-    "Name": "Clean Kitchen",
-    "Description": "-Wash the dishes.\r\n-Dry the dishes off.\r\n-Store the dishes in the shelves.",
-    "DueDates": {
-      "Monday": false,
-      "Wednesday": false,
-      "Friday": false
-    },
-    "UserInCharge": {
-      "UserName": "Destina",
-      "UserID": 3,
-      "Password": "222",
-      "IsAdmin": false,
-      "DisplayText": "Destina | 3"
-    }
-  },
-  {
-    "Name": "Clean Trash",
-    "Description": "-Living room\r\n-Bathroom\r\n-Kitchen",
-    "DueDates": {
-      "Monday": false,
-      "Thursday": false
-    },
-    "UserInCharge": {
-      "UserName": "Aaron",
-      "UserID": 1,
-      "Password": "12345",
-      "IsAdmin": false,
-      "DisplayText": "Aaron | 1"
-    }
-  },
-  {
-    "Name": "wash the car",
-    "Description": "awdsawdsawds",
-    "DueDates": {
-      "Monday": false,
-      "Saturday": false
-    },
-    "UserInCharge": {
       "UserName": "Aaron",
       "UserID": 1,
       "Password": "12345",

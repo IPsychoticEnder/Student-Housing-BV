@@ -6,21 +6,22 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 {
     public partial class AddAgreementView : Form
     {
-        HandleAgreements HandleAgreements;
-        HandleUsers HandleUsers;
-        User LoggedInUser;
+        public HandleAgreements HandleAgreements { get; set; }
+        public HandleUsers HandleUsers { get; set; }
+        public User LoggedInUser { get; set; }
 
 
         public AddAgreementView(HandleUsers handleUsers, User loggedInUser, HandleAgreements handleAgreements)
         {
             InitializeComponent();
-            this.HandleAgreements = handleAgreements;
-            this.HandleUsers = handleUsers;
-            this.LoggedInUser = loggedInUser;
+            HandleAgreements = handleAgreements;
+            HandleUsers = handleUsers;
+            LoggedInUser = loggedInUser;
         }
 
         private void btnAddAgreement_Click(object sender, EventArgs e)
         {
+            //Adds a new agreement through the HandleAgreements class
             string Title = tbNewAgreementTitle.Text;
             string Description = tbNewAgreementDescription.Text;
 
@@ -28,15 +29,16 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
 
             HandleAgreements.AddAgreement(newAgreement);
 
-            AgreementsListView agreementsListView = new(HandleUsers, LoggedInUser);
-            agreementsListView.Show();
+            AgreementsListView AgreementsListView = new(HandleUsers, LoggedInUser);
+            AgreementsListView.Show();
             this.Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            AgreementsListView agreementsListView = new(HandleUsers, LoggedInUser);
-            agreementsListView.Show();
+            //Redirects the user back to the AgreementListView
+            AgreementsListView AgreementsListView = new(HandleUsers, LoggedInUser);
+            AgreementsListView.Show();
             this.Close();
         }
     }

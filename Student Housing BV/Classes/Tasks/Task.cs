@@ -1,6 +1,4 @@
-﻿
-
-using Student_Housing_BV.Classes.Users;
+﻿using Student_Housing_BV.Classes.Users;
 
 namespace Student_Housing_BV.Classes.Tasks
 {

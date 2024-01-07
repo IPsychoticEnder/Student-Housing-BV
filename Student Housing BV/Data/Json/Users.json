@@ -9,21 +9,21 @@
   {
     "UserName": "Aaron",
     "UserID": 1,
-    "Password": "12345",
+    "Password": "111",
     "IsAdmin": false,
     "DisplayText": "Aaron | 1"
   },
   {
     "UserName": "Friso",
     "UserID": 2,
-    "Password": "1122",
+    "Password": "222",
     "IsAdmin": false,
     "DisplayText": "Friso | 2"
   },
   {
     "UserName": "Destina",
     "UserID": 3,
-    "Password": "222",
+    "Password": "333",
     "IsAdmin": false,
     "DisplayText": "Destina | 3"
   }
