@@ -24,11 +24,11 @@
       "Friday": false
     },
     "UserInCharge": {
-      "UserName": "Aaron",
-      "UserID": 1,
-      "Password": "12345",
+      "UserName": "Destina",
+      "UserID": 3,
+      "Password": "222",
       "IsAdmin": false,
-      "DisplayText": "Aaron | 1"
+      "DisplayText": "Destina | 3"
     }
   },
   {
@@ -37,6 +37,21 @@
     "DueDates": {
       "Monday": false,
       "Thursday": false
+    },
+    "UserInCharge": {
+      "UserName": "Aaron",
+      "UserID": 1,
+      "Password": "12345",
+      "IsAdmin": false,
+      "DisplayText": "Aaron | 1"
+    }
+  },
+  {
+    "Name": "wash the car",
+    "Description": "awdsawdsawds",
+    "DueDates": {
+      "Monday": false,
+      "Saturday": false
     },
     "UserInCharge": {
       "UserName": "Aaron",

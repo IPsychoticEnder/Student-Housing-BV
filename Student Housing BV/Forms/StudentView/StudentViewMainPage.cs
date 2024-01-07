@@ -38,7 +38,7 @@ namespace Student_Housing_BV
             ChangeButtonsToDefault();
             btnRouteToMonday.BackColor = Color.FromArgb(134, 97, 193);
 
-            UC_StudentMondayView uc = new(LoggedInUser);
+            UC_DailyTaskView uc = new(LoggedInUser, "Monday");
             AdduserControl(uc);
         }
 
@@ -47,7 +47,7 @@ namespace Student_Housing_BV
             ChangeButtonsToDefault();
             btnRouteToTuesday.BackColor = Color.FromArgb(134, 97, 193);
 
-            UC_StudentTuesdayView uc = new(LoggedInUser);
+            UC_DailyTaskView uc = new(LoggedInUser, "Tuesday");
             AdduserControl(uc);
         }
 
@@ -56,7 +56,7 @@ namespace Student_Housing_BV
             ChangeButtonsToDefault();
             btnRouteToWednesday.BackColor = Color.FromArgb(134, 97, 193);
 
-            UC_StudentWednesdayView uc = new(LoggedInUser);
+            UC_DailyTaskView uc = new(LoggedInUser, "Wednesday");
             AdduserControl(uc);
         }
 
@@ -65,7 +65,7 @@ namespace Student_Housing_BV
             ChangeButtonsToDefault();
             btnRouteToThursday.BackColor = Color.FromArgb(134, 97, 193);
 
-            UC_StudentThursdayView uc = new(LoggedInUser);
+            UC_DailyTaskView uc = new(LoggedInUser, "Thursday");
             AdduserControl(uc);
         }
 
@@ -74,7 +74,7 @@ namespace Student_Housing_BV
             ChangeButtonsToDefault();
             btnRouteToFriday.BackColor = Color.FromArgb(134, 97, 193);
 
-            UC_StudentFridayView uc = new(LoggedInUser);
+            UC_DailyTaskView uc = new(LoggedInUser, "Friday");
             AdduserControl(uc);
         }
 
@@ -83,7 +83,7 @@ namespace Student_Housing_BV
             ChangeButtonsToDefault();
             btnRouteToSaturday.BackColor = Color.FromArgb(134, 97, 193);
 
-            UC_StudentSaturdayView uc = new(LoggedInUser);
+            UC_DailyTaskView uc = new(LoggedInUser, "Saturday");
             AdduserControl(uc);
         }
 
@@ -92,7 +92,7 @@ namespace Student_Housing_BV
             ChangeButtonsToDefault();
             btnRouteToSunday.BackColor = Color.FromArgb(134, 97, 193);
 
-            UC_StudentSundayView uc = new(LoggedInUser);
+            UC_DailyTaskView uc = new(LoggedInUser, "Sunday");
             AdduserControl(uc);
         }
 

@@ -1,23 +1,24 @@
-﻿using Student_Housing_BV.Classes.Tasks;
-using Student_Housing_BV.Classes.Users;
+﻿using Student_Housing_BV.Classes.Users;
+using Student_Housing_BV.Classes.Tasks;
 using Student_Housing_BV.UserControls.Components;
 
 namespace Student_Housing_BV.UserControls
 {
-    public partial class UC_StudentWednesdayView : UserControl
+    public partial class UC_DailyTaskView : UserControl
     {
         HandleTasks HandleTasks { get; set; }
         User LoggedInUser { get; set; }
+        List<Classes.Tasks.Task> Tasks { get; set; }
 
-        List<Classes.Tasks.Task> Tasks = new List<Classes.Tasks.Task>();
+        string Day { get; set; }
 
-        public UC_StudentWednesdayView(User loggedInUser)
+        public UC_DailyTaskView(User loggedInUser, string day)
         {
             InitializeComponent();
             HandleTasks = new();
-            LoggedInUser = loggedInUser;
-
             Tasks = HandleTasks.Tasks;
+            LoggedInUser = loggedInUser;
+            Day = day;
 
             DisplayUserSpecificTasks();
         }
@@ -30,7 +31,7 @@ namespace Student_Housing_BV.UserControls
                 {
                     foreach (var day in task.DueDates)
                     {
-                        if (day.Key == "Wednesday")
+                        if (day.Key == Day)
                         {
                             DisplayTaskComponent uc = new(task);
                             AddTaskComponent(uc);

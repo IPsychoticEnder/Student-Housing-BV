@@ -1,6 +1,6 @@
 ﻿namespace Student_Housing_BV.UserControls
 {
-    partial class UC_StudentSundayView
+    partial class UC_DailyTaskView
     {
         /// <summary> 
         /// Required designer variable.
@@ -39,12 +39,12 @@
             flowLayoutPanel1.Size = new Size(860, 429);
             flowLayoutPanel1.TabIndex = 0;
             // 
-            // UC_StudentSundayView
+            // UC_DailyTaskView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(flowLayoutPanel1);
-            Name = "UC_StudentSundayView";
+            Name = "UC_DailyTaskView";
             Size = new Size(860, 429);
             ResumeLayout(false);
         }
