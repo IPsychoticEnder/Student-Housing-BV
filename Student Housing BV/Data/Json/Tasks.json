@@ -3,16 +3,32 @@
     "Name": "Clean Dishes",
     "Description": "-Wash dishes\r\n-Dry dishes\r\n-Store dishes",
     "DueDates": {
+      "Monday": false,
+      "Wednesday": false,
+      "Friday": false
+    },
+    "UserInCharge": {
+      "UserName": "Aaron",
+      "UserID": 1,
+      "Password": "111",
+      "IsAdmin": false,
+      "DisplayText": "Aaron | 1"
+    }
+  },
+  {
+    "Name": "Clean Floors",
+    "Description": "-Sweep the floor\r\n-Mop the floor",
+    "DueDates": {
       "Tuesday": false,
       "Thursday": false,
       "Saturday": false
     },
     "UserInCharge": {
-      "UserName": "Aaron",
-      "UserID": 1,
-      "Password": "12345",
+      "UserName": "Friso",
+      "UserID": 2,
+      "Password": "222",
       "IsAdmin": false,
-      "DisplayText": "Aaron | 1"
+      "DisplayText": "Friso | 2"
     }
   }
 ]

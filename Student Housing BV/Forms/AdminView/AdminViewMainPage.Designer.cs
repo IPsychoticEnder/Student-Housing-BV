@@ -70,6 +70,7 @@
             // 
             // button4
             // 
+            button4.Enabled = false;
             button4.Location = new Point(417, 269);
             button4.Margin = new Padding(2, 1, 2, 1);
             button4.Name = "button4";
