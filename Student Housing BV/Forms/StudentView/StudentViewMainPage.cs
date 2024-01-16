@@ -6,12 +6,14 @@ namespace Student_Housing_BV
     public partial class StudentViewMainPage : Form
     {
         public User LoggedInUser;
+        private DateTime Today = DateTime.Now;
 
         public StudentViewMainPage(User loggedInUser)
         {
             InitializeComponent();
             LoggedInUser = loggedInUser;
             lblDisplayStudentName.Text = $"{loggedInUser.UserName}";
+            InitTodaysTasks();
         }
 
         private void AdduserControl(UserControl userControl)
@@ -20,17 +22,6 @@ namespace Student_Housing_BV
             PanelMainContent.Controls.Clear();
             PanelMainContent.Controls.Add(userControl);
             userControl.BringToFront();
-        }
-
-        private void ChangeButtonsToDefault()
-        {
-            btnRouteToMonday.BackColor = Color.FromArgb(188, 212, 222);
-            btnRouteToTuesday.BackColor = Color.FromArgb(188, 212, 222);
-            btnRouteToWednesday.BackColor = Color.FromArgb(188, 212, 222);
-            btnRouteToThursday.BackColor = Color.FromArgb(188, 212, 222);
-            btnRouteToFriday.BackColor = Color.FromArgb(188, 212, 222);
-            btnRouteToSaturday.BackColor = Color.FromArgb(188, 212, 222);
-            btnRouteToSunday.BackColor = Color.FromArgb(188, 212, 222);
         }
 
         private void btnRouteToMonday_Click(object sender, EventArgs e)
@@ -106,6 +97,77 @@ namespace Student_Housing_BV
             LoginView loginView = new();
             loginView.Show();
             this.Close();
+        }
+
+        private void ChangeButtonsToDefault()
+        {
+            btnRouteToMonday.BackColor = Color.FromArgb(188, 212, 222);
+            btnRouteToTuesday.BackColor = Color.FromArgb(188, 212, 222);
+            btnRouteToWednesday.BackColor = Color.FromArgb(188, 212, 222);
+            btnRouteToThursday.BackColor = Color.FromArgb(188, 212, 222);
+            btnRouteToFriday.BackColor = Color.FromArgb(188, 212, 222);
+            btnRouteToSaturday.BackColor = Color.FromArgb(188, 212, 222);
+            btnRouteToSunday.BackColor = Color.FromArgb(188, 212, 222);
+        }
+
+        private void InitTodaysTasks()
+        {
+            if ($"{Today.DayOfWeek}" == "Monday")
+            {
+                ChangeButtonsToDefault();
+                btnRouteToMonday.BackColor = Color.FromArgb(134, 97, 193);
+
+                UC_DailyTaskView uc = new(LoggedInUser, "Monday");
+                AdduserControl(uc);
+            }
+            else if ($"{Today.DayOfWeek}" == "Tuesday")
+            {
+                ChangeButtonsToDefault();
+                btnRouteToTuesday.BackColor = Color.FromArgb(134, 97, 193);
+
+                UC_DailyTaskView uc = new(LoggedInUser, "Tuesday");
+                AdduserControl(uc);
+            }
+            else if ($"{Today.DayOfWeek}" == "Wednesday")
+            {
+                ChangeButtonsToDefault();
+                btnRouteToWednesday.BackColor = Color.FromArgb(134, 97, 193);
+
+                UC_DailyTaskView uc = new(LoggedInUser, "Wednesday");
+                AdduserControl(uc);
+            }
+            else if ($"{Today.DayOfWeek}" == "Thursday")
+            {
+                ChangeButtonsToDefault();
+                btnRouteToThursday.BackColor = Color.FromArgb(134, 97, 193);
+
+                UC_DailyTaskView uc = new(LoggedInUser, "Thursday");
+                AdduserControl(uc);
+            }
+            else if ($"{Today.DayOfWeek}" == "Friday")
+            {
+                ChangeButtonsToDefault();
+                btnRouteToFriday.BackColor = Color.FromArgb(134, 97, 193);
+
+                UC_DailyTaskView uc = new(LoggedInUser, "Friday");
+                AdduserControl(uc);
+            }
+            else if ($"{Today.DayOfWeek}" == "Saturday")
+            {
+                ChangeButtonsToDefault();
+                btnRouteToSaturday.BackColor = Color.FromArgb(134, 97, 193);
+
+                UC_DailyTaskView uc = new(LoggedInUser, "Saturday");
+                AdduserControl(uc);
+            }
+            else if ($"{Today.DayOfWeek}" == "Sunday")
+            {
+                ChangeButtonsToDefault();
+                btnRouteToSunday.BackColor = Color.FromArgb(134, 97, 193);
+
+                UC_DailyTaskView uc = new(LoggedInUser, "Sunday");
+                AdduserControl(uc);
+            }
         }
     }
 }
