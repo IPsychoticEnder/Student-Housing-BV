@@ -1,6 +1,18 @@
 [
   {
-    "Title": "No Smoking",
-    "Description": "There will be no tolerance against smoking in or around the building.\r\nThis includes the rented rooms"
+    "Title": "Smoking policy",
+    "Description": "Our smoking policy is designed to create a clean and healthy living environment for all residents. Smoking is strictly prohibited on the entire premises, including within the buildings and common areas. This policy aims to ensure the well-being of our community, minimize fire hazards, and promote a considerate and comfortable atmosphere for everyone"
+  },
+  {
+    "Title": "Quiet Hours",
+    "Description": "Quiet Hours are pivotal in cultivating a conducive atmosphere for focused study and rest within our student housing community. During designated times, typically on Sunday to Thursday nights, residents are encouraged to minimize noise levels to ensure an environment conducive to academic pursuits and rejuvenation."
+  },
+  {
+    "Title": "Respect for Others",
+    "Description": "Respect for others is the cornerstone of our student housing community, fostering an inclusive and harmonious living environment.  By valuing each other's perspectives we create a supportive atmosphere where everyone feels acknowledged and accepted, contributing to a positive and enriching living experience for all."
+  },
+  {
+    "Title": "Task Accountability",
+    "Description": "At our student housing, every resident is responsible for completing assigned tasks to contribute to the well-being of the community. Each student is assigned specific responsibilities, such as cleaning common areas, participating in community events, or assisting with maintenance tasks"
   }
 ]

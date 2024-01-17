@@ -1,14 +1,16 @@
+using Student_Housing_BV.Classes.StudentAgreements;
 using Student_Housing_BV.Classes.Users;
 using Student_Housing_BV.Forms;
 using Student_Housing_BV.Forms.AdminView.AdminViewAgreements;
+using Student_Housing_BV.Forms.AdminView.AdminViewStudentAgreements;
 using Student_Housing_BV.Forms.AdminView.AdminViewTasks;
 
 namespace Student_Housing_BV
 {
     public partial class AdminViewMainPage : Form
     {
-        HandleUsers HandleUsers;
-        User LoggedInUser;
+        public HandleUsers HandleUsers { get; private set; }
+        public User LoggedInUser { get; private set; }
 
 
         public AdminViewMainPage(HandleUsers users, User loggedInUser)
@@ -46,9 +48,16 @@ namespace Student_Housing_BV
             this.Close();
         }
 
+        private void btnViewStudentAgreements_Click(object sender, EventArgs e)
+        {
+            StudentAgreementListView form = new(this);
+            form.Show();
+            this.Hide();
+        }
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            /*Routed the user back to the LoginView signing them out.
+            /*Routes the user back to the LoginView signing them out.
              LoginView does not require any variables to work, therefor nothing is passed through.*/
             LoginView loginView = new();
             loginView.Show();

@@ -31,7 +31,7 @@
             btnViewUsers = new Button();
             btnViewTasks = new Button();
             btnViewAgreements = new Button();
-            button4 = new Button();
+            btnViewStudentAgreements = new Button();
             lbWelcomeUser = new Label();
             btnLogOut = new Button();
             SuspendLayout();
@@ -64,20 +64,20 @@
             btnViewAgreements.Name = "btnViewAgreements";
             btnViewAgreements.Size = new Size(233, 114);
             btnViewAgreements.TabIndex = 2;
-            btnViewAgreements.Text = "Agreements";
+            btnViewAgreements.Text = "Houserules";
             btnViewAgreements.UseVisualStyleBackColor = true;
             btnViewAgreements.Click += btnViewAgreements_Click;
             // 
-            // button4
+            // btnViewStudentAgreements
             // 
-            button4.Enabled = false;
-            button4.Location = new Point(417, 269);
-            button4.Margin = new Padding(2, 1, 2, 1);
-            button4.Name = "button4";
-            button4.Size = new Size(233, 114);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnViewStudentAgreements.Location = new Point(417, 269);
+            btnViewStudentAgreements.Margin = new Padding(2, 1, 2, 1);
+            btnViewStudentAgreements.Name = "btnViewStudentAgreements";
+            btnViewStudentAgreements.Size = new Size(233, 114);
+            btnViewStudentAgreements.TabIndex = 3;
+            btnViewStudentAgreements.Text = "Agreements";
+            btnViewStudentAgreements.UseVisualStyleBackColor = true;
+            btnViewStudentAgreements.Click += btnViewStudentAgreements_Click;
             // 
             // lbWelcomeUser
             // 
@@ -110,7 +110,7 @@
             ClientSize = new Size(740, 435);
             Controls.Add(btnLogOut);
             Controls.Add(lbWelcomeUser);
-            Controls.Add(button4);
+            Controls.Add(btnViewStudentAgreements);
             Controls.Add(btnViewAgreements);
             Controls.Add(btnViewTasks);
             Controls.Add(btnViewUsers);
@@ -126,7 +126,7 @@
         private Button btnViewUsers;
         private Button btnViewTasks;
         private Button btnViewAgreements;
-        private Button button4;
+        private Button btnViewStudentAgreements;
         private Label lbWelcomeUser;
         private Button btnLogOut;
     }

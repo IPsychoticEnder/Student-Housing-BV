@@ -1,19 +1,33 @@
-﻿using Student_Housing_BV.Classes.Users;
+﻿using Student_Housing_BV.Classes.Complaints;
+using Student_Housing_BV.Classes.Users;
 using Student_Housing_BV.UserControls;
 
 namespace Student_Housing_BV
 {
     public partial class StudentViewMainPage : Form
     {
-        public User LoggedInUser;
+        private User LoggedInUser;
         private DateTime Today = DateTime.Now;
+        private List<Complaint> MyComplaint;
+
+        public HandleComplaints HandleComplaints { get; private set; }
 
         public StudentViewMainPage(User loggedInUser)
         {
             InitializeComponent();
             LoggedInUser = loggedInUser;
+            HandleComplaints = new();
             lblDisplayStudentName.Text = $"{loggedInUser.UserName}";
             InitTodaysTasks();
+
+            MyComplaint = HandleComplaints.Complaints.Where(complaint => complaint.Accused.UserID == loggedInUser.UserID).ToList();
+
+            if (MyComplaint.Count > 0)
+            {
+                btnViewMyComplaints.Enabled = true;
+                btnViewMyComplaints.BackColor = Color.FromArgb(255, 224, 192);
+                btnViewMyComplaints.ForeColor = Color.Black;
+            }
         }
 
         private void AdduserControl(UserControl userControl)
@@ -168,6 +182,27 @@ namespace Student_Housing_BV
                 UC_DailyTaskView uc = new(LoggedInUser, "Sunday");
                 AdduserControl(uc);
             }
+        }
+
+        private void btnViewHouseRules_Click(object sender, EventArgs e)
+        {
+            ChangeButtonsToDefault();
+            UC_ViewHouseRules uc = new();
+            AdduserControl(uc);
+        }
+
+        private void btnGiveComplaint_Click(object sender, EventArgs e)
+        {
+            ChangeButtonsToDefault();
+            UC_GiveComplaintView uc = new(LoggedInUser);
+            AdduserControl(uc);
+        }
+
+        private void btnViewMyComplaints_Click(object sender, EventArgs e)
+        {
+            ChangeButtonsToDefault();
+            UC_ViewMyComplaints uc = new(MyComplaint);
+            AdduserControl(uc);
         }
     }
 }

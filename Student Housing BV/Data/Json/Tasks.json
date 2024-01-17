@@ -1,11 +1,10 @@
 [
   {
-    "Name": "Clean Dishes",
-    "Description": "-Wash dishes\r\n-Dry dishes\r\n-Store dishes",
+    "Name": "Kitchen Duty",
+    "Description": "Wipe down kitchen surfaces, clean appliances, and ensure all dishes are washed and put away.",
     "DueDates": {
       "Monday": false,
-      "Wednesday": false,
-      "Friday": false
+      "Thursday": false
     },
     "UserInCharge": {
       "UserName": "Aaron",
@@ -16,11 +15,69 @@
     }
   },
   {
-    "Name": "Clean Floors",
-    "Description": "-Sweep the floor\r\n-Mop the floor",
+    "Name": "Bathroom Maintenance",
+    "Description": "Clean and sanitize bathroom surfaces, including the sink, toilet, and shower or bathtub.",
+    "DueDates": {
+      "Wednesday": false
+    },
+    "UserInCharge": {
+      "UserName": "Destina",
+      "UserID": 3,
+      "Password": "333",
+      "IsAdmin": false,
+      "DisplayText": "Destina | 3"
+    }
+  },
+  {
+    "Name": "Trash Collection",
+    "Description": "Empty and replace trash bags in common areas, ensuring that recycling is sorted appropriately.",
     "DueDates": {
       "Tuesday": false,
       "Thursday": false,
+      "Saturday": false
+    },
+    "UserInCharge": {
+      "UserName": "Friso",
+      "UserID": 2,
+      "Password": "222",
+      "IsAdmin": false,
+      "DisplayText": "Friso | 2"
+    }
+  },
+  {
+    "Name": "Common Area Cleanup",
+    "Description": "Vacuum or sweep and mop common living areas, including hallways, lounges, or shared spaces.",
+    "DueDates": {
+      "Monday": false,
+      "Friday": false
+    },
+    "UserInCharge": {
+      "UserName": "Destina",
+      "UserID": 3,
+      "Password": "333",
+      "IsAdmin": false,
+      "DisplayText": "Destina | 3"
+    }
+  },
+  {
+    "Name": "Laundry Room Oversight",
+    "Description": "Tidy up the laundry room, wipe down machines, and ensure that lost and found items are properly addressed.",
+    "DueDates": {
+      "Wednesday": false,
+      "Saturday": false
+    },
+    "UserInCharge": {
+      "UserName": "Aaron",
+      "UserID": 1,
+      "Password": "111",
+      "IsAdmin": false,
+      "DisplayText": "Aaron | 1"
+    }
+  },
+  {
+    "Name": "Outdoor Area Maintenance",
+    "Description": "Take turns maintaining any outdoor areas, such as sweeping patios, picking up litter, or watering plants.",
+    "DueDates": {
       "Saturday": false
     },
     "UserInCharge": {

@@ -36,9 +36,9 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             btnBackToAdminView = new Button();
             btnAddAgreement = new Button();
             dataGridDisplayAllAgreements = new DataGridView();
-            agreementBindingSource = new BindingSource(components);
             titleDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descriptionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            agreementBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllAgreements).BeginInit();
             ((System.ComponentModel.ISupportInitialize)agreementBindingSource).BeginInit();
             SuspendLayout();
@@ -61,7 +61,7 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             btnAddAgreement.Name = "btnAddAgreement";
             btnAddAgreement.Size = new Size(114, 37);
             btnAddAgreement.TabIndex = 2;
-            btnAddAgreement.Text = "New Agreement";
+            btnAddAgreement.Text = "New Houserule";
             btnAddAgreement.UseVisualStyleBackColor = true;
             btnAddAgreement.Click += btnAddAgreement_Click;
             // 
@@ -96,10 +96,6 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             dataGridDisplayAllAgreements.TabIndex = 4;
             dataGridDisplayAllAgreements.CellDoubleClick += dataGridDisplayAllAgreements_CellDoubleClick;
             // 
-            // agreementBindingSource
-            // 
-            agreementBindingSource.DataSource = typeof(Agreement);
-            // 
             // titleDataGridViewTextBoxColumn
             // 
             titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
@@ -115,6 +111,10 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // agreementBindingSource
+            // 
+            agreementBindingSource.DataSource = typeof(Agreement);
+            // 
             // AgreementsListView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -126,7 +126,7 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
             Controls.Add(btnAddAgreement);
             Name = "AgreementsListView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgreementsListView";
+            Text = "HouseruleListView";
             ((System.ComponentModel.ISupportInitialize)dataGridDisplayAllAgreements).EndInit();
             ((System.ComponentModel.ISupportInitialize)agreementBindingSource).EndInit();
             ResumeLayout(false);
@@ -137,7 +137,6 @@ namespace Student_Housing_BV.Forms.AdminView.AdminViewAgreements
         private Button btnBackToAdminView;
         private Button btnAddAgreement;
         private DataGridView dataGridDisplayAllAgreements;
-        private BindingSource agreementBindingSource1;
         private DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private BindingSource agreementBindingSource;
         private DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;

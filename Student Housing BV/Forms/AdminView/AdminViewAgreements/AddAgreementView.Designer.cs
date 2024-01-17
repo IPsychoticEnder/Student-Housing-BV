@@ -52,7 +52,7 @@
             groupBox1.Size = new Size(523, 320);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "New agreement";
+            groupBox1.Text = "New houserule";
             // 
             // tbNewAgreementDescription
             // 
@@ -105,7 +105,7 @@
             btnAddAgreement.Name = "btnAddAgreement";
             btnAddAgreement.Size = new Size(145, 29);
             btnAddAgreement.TabIndex = 10;
-            btnAddAgreement.Text = "Add Agreement";
+            btnAddAgreement.Text = "Add Houserule";
             btnAddAgreement.UseVisualStyleBackColor = true;
             btnAddAgreement.Click += btnAddAgreement_Click;
             // 
@@ -118,7 +118,7 @@
             Controls.Add(groupBox1);
             Name = "AddAgreementView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AddAgreementView";
+            Text = "AddHouseruleView";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
