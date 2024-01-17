@@ -42,8 +42,13 @@
             btnRouteToTuesday = new Button();
             btnRouteToMonday = new Button();
             PanelMainContent = new Panel();
+            panel3 = new Panel();
+            btnViewMyComplaints = new Button();
+            btnGiveComplaint = new Button();
+            btnViewHouseRules = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -232,18 +237,75 @@
             // 
             // PanelMainContent
             // 
-            PanelMainContent.Dock = DockStyle.Fill;
+            PanelMainContent.Dock = DockStyle.Top;
             PanelMainContent.Location = new Point(0, 103);
             PanelMainContent.Name = "PanelMainContent";
-            PanelMainContent.Size = new Size(860, 429);
+            PanelMainContent.Size = new Size(860, 436);
             PanelMainContent.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(46, 41, 78);
+            panel3.Controls.Add(btnViewMyComplaints);
+            panel3.Controls.Add(btnGiveComplaint);
+            panel3.Controls.Add(btnViewHouseRules);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(0, 539);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(860, 94);
+            panel3.TabIndex = 5;
+            // 
+            // btnViewMyComplaints
+            // 
+            btnViewMyComplaints.BackColor = Color.Gray;
+            btnViewMyComplaints.Cursor = Cursors.Hand;
+            btnViewMyComplaints.Enabled = false;
+            btnViewMyComplaints.FlatStyle = FlatStyle.Flat;
+            btnViewMyComplaints.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnViewMyComplaints.ForeColor = Color.Silver;
+            btnViewMyComplaints.Location = new Point(609, 23);
+            btnViewMyComplaints.Name = "btnViewMyComplaints";
+            btnViewMyComplaints.Size = new Size(166, 48);
+            btnViewMyComplaints.TabIndex = 2;
+            btnViewMyComplaints.Text = "My complaints";
+            btnViewMyComplaints.UseVisualStyleBackColor = false;
+            btnViewMyComplaints.Click += btnViewMyComplaints_Click;
+            // 
+            // btnGiveComplaint
+            // 
+            btnGiveComplaint.BackColor = Color.FromArgb(255, 192, 192);
+            btnGiveComplaint.Cursor = Cursors.Hand;
+            btnGiveComplaint.FlatStyle = FlatStyle.Flat;
+            btnGiveComplaint.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGiveComplaint.Location = new Point(347, 23);
+            btnGiveComplaint.Name = "btnGiveComplaint";
+            btnGiveComplaint.Size = new Size(166, 48);
+            btnGiveComplaint.TabIndex = 1;
+            btnGiveComplaint.Text = "Give a complaint";
+            btnGiveComplaint.UseVisualStyleBackColor = false;
+            btnGiveComplaint.Click += btnGiveComplaint_Click;
+            // 
+            // btnViewHouseRules
+            // 
+            btnViewHouseRules.BackColor = Color.FromArgb(192, 192, 255);
+            btnViewHouseRules.Cursor = Cursors.Hand;
+            btnViewHouseRules.FlatStyle = FlatStyle.Flat;
+            btnViewHouseRules.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnViewHouseRules.Location = new Point(85, 23);
+            btnViewHouseRules.Name = "btnViewHouseRules";
+            btnViewHouseRules.Size = new Size(166, 48);
+            btnViewHouseRules.TabIndex = 0;
+            btnViewHouseRules.Text = "View House rules";
+            btnViewHouseRules.UseVisualStyleBackColor = false;
+            btnViewHouseRules.Click += btnViewHouseRules_Click;
             // 
             // StudentViewMainPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(75, 82, 103);
-            ClientSize = new Size(860, 532);
+            ClientSize = new Size(860, 633);
+            Controls.Add(panel3);
             Controls.Add(PanelMainContent);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -254,12 +316,12 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label label1;
         private Label label2;
         private Panel panel1;
         private Label lblTitleOfProduct;
@@ -275,5 +337,9 @@
         private Button btnRouteToTuesday;
         private Button btnExitProgram;
         private Button btnLogOut;
+        private Panel panel3;
+        private Button btnGiveComplaint;
+        private Button btnViewHouseRules;
+        private Button btnViewMyComplaints;
     }
 }

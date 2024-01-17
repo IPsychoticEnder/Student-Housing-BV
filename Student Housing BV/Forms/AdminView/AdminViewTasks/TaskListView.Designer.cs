@@ -130,7 +130,6 @@
 
         private Button btnBackToAdminView;
         private Button btnAddTask;
-        private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn filePathDataGridViewTextBoxColumn;
         private BindingSource handleTasksBindingSource;
         private DataGridView dataGridDisplayAllTasks;

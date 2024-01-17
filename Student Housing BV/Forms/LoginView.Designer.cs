@@ -113,7 +113,7 @@
             tbLoginUserID.Name = "tbLoginUserID";
             tbLoginUserID.Size = new Size(153, 23);
             tbLoginUserID.TabIndex = 5;
-            tbLoginUserID.Text = "admin";
+            tbLoginUserID.Text = "Aaron";
             // 
             // tbLoginUserPassword
             // 
@@ -122,7 +122,7 @@
             tbLoginUserPassword.Name = "tbLoginUserPassword";
             tbLoginUserPassword.Size = new Size(153, 23);
             tbLoginUserPassword.TabIndex = 4;
-            tbLoginUserPassword.Text = "ADMIN";
+            tbLoginUserPassword.Text = "111";
             // 
             // label2
             // 

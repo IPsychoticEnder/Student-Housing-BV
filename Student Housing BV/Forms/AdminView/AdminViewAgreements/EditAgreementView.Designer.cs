@@ -52,7 +52,7 @@
             groupBox1.Size = new Size(523, 320);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Edit agreement";
+            groupBox1.Text = "Edit houserule";
             // 
             // tbAgreementDescription
             // 
@@ -107,7 +107,7 @@
             btnSaveAgreement.Name = "btnSaveAgreement";
             btnSaveAgreement.Size = new Size(145, 29);
             btnSaveAgreement.TabIndex = 10;
-            btnSaveAgreement.Text = "Save Agreement";
+            btnSaveAgreement.Text = "Save Houserule";
             btnSaveAgreement.UseVisualStyleBackColor = false;
             btnSaveAgreement.Click += btnSaveAgreement_Click;
             // 
@@ -121,7 +121,7 @@
             Margin = new Padding(2, 1, 2, 1);
             Name = "EditAgreementView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EditAgreementView";
+            Text = "EditHouseruleView";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
